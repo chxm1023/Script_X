@@ -988,7 +988,7 @@ http:
       timeout: 10
     # 陆琪讲故事
     - match: ^https?:\/\/www\.luqijianggushi\.com\/api
-      name: luqijianggushi.response
+      name: 陆琪讲故事
       type: response
       require-body: true
       timeout: 10
