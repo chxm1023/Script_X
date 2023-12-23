@@ -12,7 +12,11 @@
 
 # 使用方法：先开脚本再打开App，自动会生效，如果无效就关了重开或者按一下恢复购买，在还不行就卸载App重新安装！最后还不行的话就是脚本失效了！
 
-# 更新日期：2023-11-11
+# 特别说明：此脚本可能会导致App Store无法登录ID
+
+# 解决方法：关[MITM][脚本][代理工具]方法选一即可
+
+# 更新日期：2023-12-23
 
 # 已解锁App下载地址：https://too.st/chxm1023
 
@@ -48,6 +52,10 @@ https?:\/\/omp-audiobookpay\.lrts\.me\/a\.p\?op=get_advertright - reject-dict
 ^https?:\/\/ftmailbox\.cn\/ad_impression\/.+ - reject-200
 # 恋小语去广告
 ^http:\/\api\.love\.823123\.com\/facades\/ad_space\.index - reject-200
+# 小白学习开屏广告
+^https:\/\/api\.xbxxhz\.com\/big_data\/v\d\/home_pages - reject
+#看理想 开屏广告
+^https:\/\/api\.vistopia\.com\.cn\/api\/v\d\/home\/advertisement - reject-dict
 
 
 
@@ -74,13 +82,13 @@ http-response ^https?:\/\/api\.bluepulse\.cn\/bluepulse-caption-server-front\/ap
 
 #************************************#
 # 搜图神器
-# hostname = wallpaper.soutushenqi.com
-http-response ^http:\/\/wallpaper\.soutushenqi\.com\/api\/.+\/account\/token script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/soutu.js, requires-body=true, tag=搜图神器
+# hostname = *.soutushenqi.com
+http-response ^https?:\/\/.*\.soutushenqi\.com\/(api\/.+\/account\/(token|info)|cykj_community|v\d\/home\/dialog) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/soutu.js, requires-body=true, tag=搜图神器
 
 #************************************#
 # PS 图片编辑
 # hostname = lcs-mobile-cops.adobe.io
-http-response ^https?:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Ps.js, requires-body=true, tag=Photoshop Express图片编辑
+http-response ^https:\/\/lcs-mobile-cops\.adobe\.io\/(mobile_profile|mobiles\/access_profile) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Ps.js, requires-body=true, tag=Photoshop Express图片编辑
 
 #************************************#
 # 彩云天气
@@ -825,14 +833,6 @@ http-response ^https?:\/\/app\.yinxiang\.com\/third\/scanner\/scanner\/app\/user
 http-response ^https?:\/\/www\.luqijianggushi\.com\/api script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/luqijianggushi.js, requires-body=true, tag=陆琪讲故事
 
 #************************************#
-# Tidal音乐
-# hostname = api.tidal.com
-# 解锁个人中心
-http-response ^https?:\/\/api\.tidal\.com\/v1\/users\/\d+\/subscription.+ script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/TIDALHiFiPlusCrack.js, requires-body=true, timeout=60, tag=TIDALHiFiPlusCrack
-# 解锁音质
-http-request ^https?:\/\/api\.tidal\.com\/v1\/tracks/\d+\/playbackinfopostpaywall.+ script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/TIDAL/tidal.js, requires-body=true, timeout=60, tag=TIDALMasterCrack
-
-#************************************#
 # codesnackide 软件开发工具
 # hostname = api.cs-ide.io
 http-response ^https?:\/\/api\.cs-ide\.io\/purchases\/active script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/codesnackide.js, requires-body=true, tag=codesnackide
@@ -882,8 +882,159 @@ http-response ^https?:\/\/api\.300624\.com\/v3\/plan\/feature-code\/auth script-
 # hostname = *.tangdou.com
 http-request ^https:\/\/.*\.tangdou\.com\/(?:\w*\/)?\d+\/\d+_\w+\.mp4\?sign=[\w-]+&t=\w+$ script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Tangdou.js, requires-body=false, tag=糖豆广场舞
 
+#************************************#
+# 小白学习打印/小白智慧打印/小白试卷宝
+# hostname = api.xbxxhz.com, epbox.gongfudou.com
+http-response ^https?:\/\/api\.xbxxhz\.com\/graphql script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/xiaobaixuexi.js, requires-body=true, tag=小白学习
+http-response ^https?:\/\/epbox\.gongfudou\.com\/graphql script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/xiaobaixuexi.js, requires-body=true, tag=xiaobaixuexi
+
+#************************************#
+# Duet Display/DuetAir
+# hostname = rdp.duetdisplay.com
+http-response ^https?:\/\/rdp\.duetdisplay\.com\/v1\/users\/validateReceipt script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/DuetDisplay.js, requires-body=true, tag=DuetDisplay
+
+#************************************#
+# 幕布
+# hostname = api2.mubu.com
+http-response ^https?:\/\/api2\.mubu\.com\/v3\/api\/user\/current_user script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/mubu.js, requires-body=true, tag=幕布
+
+#************************************#
+# 壁纸-需登录
+# hostname = leancloud.emotionwp.com
+http-response ^https?:\/\/leancloud\.emotionwp\.com\/.+\/(classes|batch\/save) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/bizhi.js, requires-body=true, tag=壁纸
+
+#************************************#
+# 糖果壁纸
+# hostname = w.5hzs.com
+http-response ^https?:\/\/w\.5hzs\.com\/player\/index script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/tangguo.js, requires-body=true, tag=糖果壁纸
+
+#************************************#
+# 今日香烟
+# hostname = smoke.icar.ren
+http-response ^https?:\/\/smoke\.icar\.ren\/index\.php script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/JRXY.js, requires-body=true, tag=今日香烟
+
+#************************************#
+# 话本小说
+# hostname = *.ihuaben.com
+http-response ^https?:\/\/.*\.ihuaben\.com\/(api\/userinfo|book\/app\/(vipReadWaitSeconds|book)|function\/bookservice\/authorInfo) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/huabenxiaoshuo.js, requires-body=true, tag=话本小说
+
+#************************************#
+# 虫虫吉他-谱曲
+http-response http:\/\/cc\.lzjoy\.com script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/ccjt.js, requires-body=true, tag=虫虫吉他
+
+#************************************#
+# 易百查
+# hostname = api.ebaicha.com
+http-response ^https?:\/\/api\.ebaicha\.com script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/yibaicha.js, requires-body=true, tag=易百查
+
+#************************************#
+# 听书助手
+# hostname = www.huojiwangluo.cn
+http-response ^https?:\/\/www\.huojiwangluo.cn\/ting\/user\/(get|anonylogin) script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/tingshuzhushou.js, requires-body=true, tag=听书助手
+
+#************************************#
+# Slopes
+# hostname = my.getslopes.com
+http-response ^https?:\/\/my\.getslopes\.com\/api\/v\d\/account script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Slopes.js, requires-body=true, tag=Slopes
+
+#************************************#
+# 白描
+# hostname = baimiao.uzero.cn
+^https?:\/\/baimiao\.uzero\.cn\/api\/.+\/(appLaunchWithUser|getAnnouncement|checkLoginClient) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/baimiao.js
+
+#************************************#
+# 消防设施三件套-消防/书记/军队
+http-response ^http:\/\/richapi\.yestiku\.com\/api\/(identity\/listData|questionset\/getInfo) script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/richapi.js, requires-body=true, tag=消防设施
+
+#************************************#
+# Felo实时翻译
+# hostname = translator.felo.me
+http-response ^https?:\/\/translator\.felo\.me\/api\/plan\/current script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Felo.js, requires-body=true, tag=Felo
+
+#************************************#
+# 凡音钢琴
+# hostname = gzfanyin.com
+http-response ^https?:\/\/gzfanyin\.com\/api\/ums\/getMember script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/fanyingangqin.js, requires-body=true, tag=凡音钢琴
+
+#************************************#
+# 题库大全-好几百个APP
+# hostname = iosapi.yueshuian.com, question.tiku.cqxcj.top, base.cmoe.top, yyapi.yayingtk.com, learn.cqrry.com, api.sryx.net, api.meigit.com, question.api.anjiazui.com, app.bftk.com.cn, question.civil.shaoeyy.com
+http-response ^https?:\/\/(iosapi\.yueshuian|question\.tiku\.cqxcj|base\.cmoe|yyapi\.yayingtk|learn\.cqrry|api\.sryx|api\.meigit|question\.api\.anjiazui|app\.bftk|question\.civil\.shaoeyy)\.(com|top|net).+(common|front\/customer|vip\/getValidTime) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/tiku.js, requires-body=true, tag=题库大全
+
+#************************************#
+# TheGuardian-杂志APP
+# hostname = members-data-api.theguardian.com
+http-response ^https:\/\/members-data-api\.theguardian\.com\/user-attributes\/me script-path=https://raw.githubusercontent.com/leey668/pyer/main/theguardian.js, requires-body=true, tag=TheGuardian
+
+#************************************#
+# 看理想
+# hostname = api.vistopia.com.cn
+http-response ^https://api\.vistopia\.com\.cn/api/v\d/(user/profile|reader/section-detail) script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/kanlixiangbd.js, requires-body=true, tag=看理想
+http-request ^https:\/\/api\.vistopia\.com\.cn\/api\/v\d\/(user\/profile|reader\/section-detail|content\/article_list) script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/kanlixiang.js, requires-body=false, tag=kanlixiang
+
+#************************************#
+# Triplens-拍照翻译
+# hostname = subscription.aresframework.com
+http-response ^https:\/\/subscription\.aresframework\.com\/api\/purchase script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Triplens.js, requires-body=true, tag=Triplens
+
+#************************************#
+# 主题-壁纸大全
+# hostname = wallpaper-zz.laoyinnianhua.com
+http-response http://wallpaper-zz.laoyinnianhua.com/api/visitors script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/bzdq.js, requires-body=true, tag=壁纸大全
+
+#************************************#
+# 波点音乐
+# hostname = bd-api.kuwo.cn
+http-response ^https:\/\/bd-api\.kuwo\.cn\/api\/(ucenter\/users|play\/listening\/user|service\/(home\/index|banner\/myPage|advert\/watch)) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/bodian.js, requires-body=true, tag=波点音乐
+
+#************************************#
+# DreamFace-AI制作
+# hostname = www.dreamfaceapp.com
+http-response ^https:\/\/www\.dreamfaceapp\.com\/df-server\/user\/save_user_login script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/DreamFace.js, requires-body=true, tag=DreamFace
+
+#************************************#
+# FlipaClip-2维动画工作室
+# hostname = api.purchasely.io
+http-response ^https:\/\/api\.purchasely\.io\/paab\/user_purchases script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/FlipaClip.js, requires-body=true, tag=FlipaClip
+
+#************************************#
+# 智能助手
+# hostname = www.kaolahome.com, cat-revenuecat-qscqkotbrh.cn-hongkong.fcapp.run
+http-response ^https?:\/\/(www\.kaolahome\.com\/xunnews|cat-revenuecat-qscqkotbrh\.cn-hongkong\.fcapp\.run)\/.+\/(receipts$|subscribers\/?(.*?)*$) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/zhinengzhushou.js, requires-body=true, tag=智能助手
+http-request ^https?:\/\/(www\.kaolahome\.com\/xunnews|cat-revenuecat-qscqkotbrh\.cn-hongkong\.fcapp\.run)\/.+\/(receipts$|subscribers\/?(.*?)*$) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/zhinengzhushou.js, requires-body=false, tag=zhinengzhushou
+
+#************************************#
+# BodyOk-间歇性断食追踪
+# hostname = api.apphud.com
+http-response ^https:\/\/api\.apphud\.com\/.+\/(subscriptions|customers)$ script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/BodyOk.js, requires-body=true, tag=BodyOk
+
+#************************************#
+# 知音律(需试用)
+# hostname = auth.production.metronautapp.cn
+http-response ^https?:\/\/auth\.production\.metronautapp\.cn\/jwt\/refresh script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Zhiyinlv.js, requires-body=true, tag=知音律
+
+#************************************#
+# 小熊录屏-游戏直播助手
+# hostname = donate-api.recorder.duapps.com
+http-response ^http:\/\/donate-api\.recorder\.duapps\.com\/pay\/checkAppleSubscribeReceipt script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/xiaoxiongluping.js, requires-body=true, tag=小熊录屏
+
+#************************************#
+# everyday-习惯养成
+# hostname = api.everyday.app
+http-response ^https?:\/\/api\.everyday\.app\/users script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/everyday.js, requires-body=true, tag=everyday
+
+#************************************#
+# 遥忘/薄荷壁纸
+# hostname = *.whalean.com
+http-response ^https?:\/\/.*\.whalean\.com\/(poseidon-service\/api\/user|member\/userMemberHomePageV2|hestia-service\/api\/wpUser\/getUserInfo) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/yaowangbohe.js, requires-body=true, tag=遥忘/薄荷壁纸
+
+#************************************#
+# 娃娃路
+# hostname = api.wawalu.cn
+http-response ^https:\/\/api\.wawalu\.cn\/wawalu\/practise\/(list.+|download) script-path=https://gist.githubusercontent.com/Sliverkiss/daaeab5573613f3adfe28d80ea19760c/raw/wwl.js, requires-body=true, tag=娃娃路
+
 
 
 #************************************#
 [MITM]
-hostname = *.tangdou.com, api.300624.com, hi-api.weshineapp.com, api.apphud.com, xw.jietuguanjia.com, user.linglan.com, mobileapp.wuyamusic.com, *-slidebox-ios-prod.cloudfunctions.net, www.xiaoxiongyouhao.com, api.cs-ide.io, api.tidal.com, www.luqijianggushi.com, app.yinxiang.com, cdn-bm.camera360.com, szone-my.7net.cc, cm15-c110-3.play.bokecc.com, mb.xinghengedu.com, glass.photo, api.intelimeditor.com, open3.vistastory.com, www.xfx119.com, water*.yunxiaoguo.cn, *.cloudfront.net, ftmailbox.cn, standard.rhinox*.com, appss.rhinox*.com, appss.linhongshi.com, purchase-*-api.*.com, user-kaji-api.b612kaji.com, api.*lianqin*.*, api.mangofuture.cn, kkr-user.tapque.com, subscription-api.notedapp.io, *.execute-api.ap-northeast-2.amazonaws.com, main-sciam-nature.content.pugpig.com, creaceed.com, *api.quthing.com, backend.getdrafts.com, www.guga.co, api.lianzhidao123.com, *.yangjibao.com, api.love.823123.com, prod.api.lambus.io, jz.jarstones.com, koan.bopulab.cn, calc.kuaicad.com, www.fuyoutech.club, qqpyqapi.app.xinmaicard.com, www.kkmop.com, play.wo1wan.com, api.mattingm.com, *.camera360.com, api.expingworld.com, integral2.dasyibalang.com, *.kakamobi.cn, api.shuashuati.com, www.tingniukeji.com, api.panda.boosters.company, api.geefoo.cn, api.995120.cn, api.ankichinas.com, api.hujuvod.com, api.qwapp.top, api.weilaizhushou.com, api.shouzhang.com, mobile.flightradar24.com, oxfordx.cp.com.cn, isi.*.g*.com*, api.polaxiong.com, firstclass.tripsy.app, diary-id.sumi.io, api-production.endel.io, api-service.tutusouti.com, *.oracle.bendingspoonsapps.com, notability.com, www.mymorpholio.com, calendar.aiyohoo.com, api.timetreeapp.com, zy6kcqa01a.execute-api.us-east-2.amazonaws.com, fl*app.com, api.guoqi365.com, cad.glodon.com, yopu.co, api.hummingbird.businessreview.global, bzpp2.iwzbz.com, www.1314zhilv.com, *.kuso.xyz, receipt-verifier.cdwapi.com, *.api.moji.com, *.wps.cn, kc.xinli001.com, i.at.qq.com, license.pdfexpert.com, api.tuzhitong.com, api.yonekura.cn, ssl-api.itranslateapp.com, *.videoshowiosglobalserver.com, *.enjoy-mobi.com, api.getdailyart.com, p.du.163.com, snailsleep.net, drive*.quark.cn, yeguo.236api.com, jz.wacai.com, ljh.dianxiaoman.com, guapi.liangjihui.com, *xmind.*, schedule-api.julanling.com, *.xiangha.com, api.boohee.com, www.40sishi.com, kongque.twan.cn, ggs.manmeng168.com, novel.test.onedayapp.cn, *.lanjiyin.com.cn, iosapi.peiyinxiu.com, *.qingning6.com, day-api.xixitime.com, api.adapty.io, api.mojidict.com, dj.palmestore.com, asia.gikken.co, xianbeikeji.com, server.*.com, *.xiuxiu.meitu.com, api.posters.meitu.com,api-*.meitu.com,  *.meiyan.com, app.yidiansz.com, mobile-api.adguard.org, xremit.xcurrency.com, explorer.tratao.com, top-widgets-api.xiaozujian.com, iap.etm.tech, api.open.loveclip.site, www.skyjos.cn, www2.tigeroom.com, cn.czur.cc, share.dianshihome.com, api.gaoqingdianshi.com, 123.56.125.184, dashen*.shuiyinyu.com, *.imendon.com, api2.vlognow.me, service.ilovepdf.com, www.freshhome.top, *.dicallapp.com, format-api.netpock.com, widget-box-api.codefuture.top, cubox.*, *.radio.cn, 60.205.171.165, accounts.agenda.com, *.aoscdn.com, *.apsapp.cn, apimboom2.globaldelight.net, *.duitang.com, spclient.wg.spotify.com, scibug.com, *.wallpaperscraft.com, screen-lock.*.com, api.risingfalling.com, api.meiease.cn, *.aliyundrive.com, *.alipan.com, pan.baidu.com, *.camscanner.com, *.intsig.net, mb3admin.com, *.kuwo.cn, *.kwcdn.kuwo.cn, *.lrts.me, iosv2.cjapi.5fun.com, api*.speedtest.cn, app.yiyan.art, *.cyapi.cn, *.caiyunapp.com, adx.sogaha.cn, lcs-mobile-cops.adobe.io, wallpaper.soutushenqi.com, api.bluepulse.cn, restore-access.indream.app, buy.itunes.apple.com, api.revenuecat.com
+hostname = api.wawalu.cn, *.whalean.com, api.everyday.app, donate-api.recorder.duapps.com, auth.production.metronautapp.cn, api.apphud.com, www.kaolahome.com, cat-revenuecat-qscqkotbrh.cn-hongkong.fcapp.run, api.purchasely.io, www.dreamfaceapp.com, bd-api.kuwo.cn, subscription.aresframework.com, api.vistopia.com.cn, members-data-api.theguardian.com, iosapi.yueshuian.com, question.tiku.cqxcj.top, base.cmoe.top, yyapi.yayingtk.com, learn.cqrry.com, api.sryx.net, api.meigit.com, question.api.anjiazui.com, app.bftk.com.cn, question.civil.shaoeyy.com, gzfanyin.com, translator.felo.me, baimiao.uzero.cn, my.getslopes.com, www.huojiwangluo.cn, api.ebaicha.com, *.ihuaben.com, smoke.icar.ren, w.5hzs.com, leancloud.emotionwp.com, api2.mubu.com, rdp.duetdisplay.com, api.xbxxhz.com, epbox.gongfudou.com, *.tangdou.com, api.300624.com, hi-api.weshineapp.com, api.apphud.com, xw.jietuguanjia.com, user.linglan.com, mobileapp.wuyamusic.com, *-slidebox-ios-prod.cloudfunctions.net, www.xiaoxiongyouhao.com, api.cs-ide.io, www.luqijianggushi.com, app.yinxiang.com, cdn-bm.camera360.com, szone-my.7net.cc, cm15-c110-3.play.bokecc.com, mb.xinghengedu.com, glass.photo, api.intelimeditor.com, open3.vistastory.com, www.xfx119.com, water*.yunxiaoguo.cn, *.cloudfront.net, ftmailbox.cn, standard.rhinox*.com, appss.rhinox*.com, appss.linhongshi.com, purchase-*-api.*.com, user-kaji-api.b612kaji.com, api.*lianqin*.*, api.mangofuture.cn, kkr-user.tapque.com, subscription-api.notedapp.io, *.execute-api.ap-northeast-2.amazonaws.com, main-sciam-nature.content.pugpig.com, creaceed.com, *api.quthing.com, backend.getdrafts.com, www.guga.co, api.lianzhidao123.com, *.yangjibao.com, api.love.823123.com, prod.api.lambus.io, jz.jarstones.com, koan.bopulab.cn, calc.kuaicad.com, www.fuyoutech.club, qqpyqapi.app.xinmaicard.com, www.kkmop.com, play.wo1wan.com, api.mattingm.com, *.camera360.com, api.expingworld.com, integral2.dasyibalang.com, *.kakamobi.cn, api.shuashuati.com, www.tingniukeji.com, api.panda.boosters.company, api.geefoo.cn, api.995120.cn, api.ankichinas.com, api.hujuvod.com, api.qwapp.top, api.weilaizhushou.com, api.shouzhang.com, mobile.flightradar24.com, oxfordx.cp.com.cn, isi.*.g*.com*, api.polaxiong.com, firstclass.tripsy.app, diary-id.sumi.io, api-production.endel.io, api-service.tutusouti.com, *.oracle.bendingspoonsapps.com, notability.com, www.mymorpholio.com, calendar.aiyohoo.com, api.timetreeapp.com, zy6kcqa01a.execute-api.us-east-2.amazonaws.com, fl*app.com, api.guoqi365.com, cad.glodon.com, yopu.co, api.hummingbird.businessreview.global, bzpp2.iwzbz.com, www.1314zhilv.com, *.kuso.xyz, receipt-verifier.cdwapi.com, *.api.moji.com, *.wps.cn, kc.xinli001.com, i.at.qq.com, license.pdfexpert.com, api.tuzhitong.com, api.yonekura.cn, ssl-api.itranslateapp.com, *.videoshowiosglobalserver.com, *.enjoy-mobi.com, api.getdailyart.com, p.du.163.com, snailsleep.net, drive*.quark.cn, yeguo.236api.com, jz.wacai.com, ljh.dianxiaoman.com, guapi.liangjihui.com, *xmind.*, schedule-api.julanling.com, *.xiangha.com, api.boohee.com, www.40sishi.com, kongque.twan.cn, ggs.manmeng168.com, novel.test.onedayapp.cn, *.lanjiyin.com.cn, iosapi.peiyinxiu.com, *.qingning6.com, day-api.xixitime.com, api.adapty.io, api.mojidict.com, dj.palmestore.com, asia.gikken.co, xianbeikeji.com, server.*.com, *.xiuxiu.meitu.com, api.posters.meitu.com,api-*.meitu.com,  *.meiyan.com, app.yidiansz.com, mobile-api.adguard.org, xremit.xcurrency.com, explorer.tratao.com, top-widgets-api.xiaozujian.com, iap.etm.tech, api.open.loveclip.site, www.skyjos.cn, www2.tigeroom.com, cn.czur.cc, share.dianshihome.com, api.gaoqingdianshi.com, 123.56.125.184, dashen*.shuiyinyu.com, *.imendon.com, api2.vlognow.me, service.ilovepdf.com, www.freshhome.top, *.dicallapp.com, format-api.netpock.com, widget-box-api.codefuture.top, cubox.*, *.radio.cn, 60.205.171.165, accounts.agenda.com, *.aoscdn.com, *.apsapp.cn, apimboom2.globaldelight.net, *.duitang.com, spclient.wg.spotify.com, scibug.com, *.wallpaperscraft.com, screen-lock.*.com, api.risingfalling.com, api.meiease.cn, *.aliyundrive.com, *.alipan.com, pan.baidu.com, *.camscanner.com, *.intsig.net, mb3admin.com, *.kuwo.cn, *.kwcdn.kuwo.cn, *.lrts.me, iosv2.cjapi.5fun.com, api*.speedtest.cn, app.yiyan.art, *.cyapi.cn, *.caiyunapp.com, adx.sogaha.cn, lcs-mobile-cops.adobe.io, *.soutushenqi.com, api.bluepulse.cn, nicegram.cloud, restore-access.indream.app, buy.itunes.apple.com, firestore.googleapis.com, api.revenuecat.com
