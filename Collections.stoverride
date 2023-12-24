@@ -1255,6 +1255,12 @@ http:
       type: response
       require-body: true
       timeout: 10
+    # TenPercent
+    - match: ^https:\/\/api\.changecollective\.com\/api\/v\d\/user
+      name: TenPercent.response
+      type: response
+      require-body: true
+      timeout: 10
 
 
 
@@ -1478,10 +1484,14 @@ http:
     - 'api.everyday.app'
     - '*.whalean.com'
     - 'api.wawalu.cn'
+    - 'api.changecollective.com'
 
 
 
 script-providers:
+  TenPercent.response:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/TenPercent.js
+    interval: 86400
   wwl.response:
     url: https://gist.githubusercontent.com/Sliverkiss/daaeab5573613f3adfe28d80ea19760c/raw/wwl.js
     interval: 86400
