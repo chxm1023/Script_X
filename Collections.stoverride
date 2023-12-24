@@ -1,15 +1,19 @@
 #SUBSCRIBED https://raw.githubusercontent.com/chxm1023/Script_X/main/Collections.stoverride
 name: App解锁合集
 desc: 作者：chxm1023
-# 📢 频道：https://t.me/chxm1023
-# 👥 群组：https://t.me/chxm1023_Chat
+# 关注频道：https://t.me/chxm1023
+# 加入群组：https://t.me/chxm1023_Chat
 
 #=============【使用说明】=============#
 # 使用声明：作者并未参与任何形式的金钱交易，仅限测试和学习，请勿转载与贩卖，下载使用后24小时请删除⚠️⚠️⚠️⚠️⚠️
 
 # 使用方法：先开脚本再打开App，自动会生效，如果无效就关了重开或者按一下恢复购买，在还不行就卸载App重新安装！最后还不行的话就是脚本失效了！
 
-# 更新日期：2023-11-11
+# 特别说明：此脚本可能会导致App Store无法登录/下载
+
+# 解决方法：关[MITM][脚本][代理工具]方法选一即可
+
+# 更新日期：2023-12-24
 
 # 项目解锁App下载地址：https://too.st/chxm1023
 
@@ -47,6 +51,10 @@ http:
     - ^https?:\/\/ftmailbox\.cn\/ad_impression\/.+ - reject-200
     # 恋小语去广告
     - ^http:\/\api\.love\.823123\.com\/facades\/ad_space\.index - reject-200
+    # 小白学习开屏广告
+    - ^https:\/\/api\.xbxxhz\.com\/big_data\/v\d\/home_pages - reject
+    # 看理想 开屏广告
+    - ^https:\/\/api\.vistopia\.com\.cn\/api\/v\d\/home\/advertisement - reject-dict
 
 
 
@@ -81,13 +89,13 @@ http:
       require-body: true
       timeout: 10
     # 搜图神器
-    - match: ^http:\/\/wallpaper\.soutushenqi\.com\/api\/.+\/account\/token
+    - match: ^https?:\/\/.*\.soutushenqi\.com\/(api\/.+\/account\/(token|info)|cykj_community|v\d\/home\/dialog)
       name: 搜图神器
       type: response
       require-body: true
       timeout: 10
     # PS 图片编辑
-    - match: ^https?:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile
+    - match: ^https:\/\/lcs-mobile-cops\.adobe\.io\/(mobile_profile|mobiles\/access_profile)
       name: PS 图片编辑
       type: response
       require-body: true
@@ -187,7 +195,7 @@ http:
       type: request
       timeout: 10
     # 堆糖
-    - match: ^http[s]?:\/\/.*\.duitang\.com\/napi
+    - match: ^https?:\/\/.*\.duitang\.com\/napi
       name: 堆糖
       type: response
       require-body: true
@@ -265,7 +273,7 @@ http:
       require-body: true
       timeout: 10
     # 电视家
-    - match: ^http[s]?:\/\/(share\.dianshihome\.com\/api\/user\/base\/info|123\.56\.125\.184\/api\/.+\/user\/info|api\.gaoqingdianshi\.com\/api\/ad\/mobile\/config)
+    - match: ^https?:\/\/(share\.dianshihome\.com\/api\/user\/base\/info|123\.56\.125\.184\/api\/.+\/user\/info|api\.gaoqingdianshi\.com\/api\/ad\/mobile\/config)
       name: 电视家
       type: response
       require-body: true
@@ -421,7 +429,7 @@ http:
       require-body: true
       timeout: 10
     # 计算器HD，万能播放器，万能变声器，塔罗牌，Art Widget(小组件)，memo(标签小组件)，NFC标签读写器工具，(一共解锁七个App)
-    - match: ^http[s]?:\/\/www\.40sishi\.com
+    - match: ^https?:\/\/www\.40sishi\.com
       name: 40sishi
       type: response
       require-body: true
@@ -637,10 +645,10 @@ http:
       require-body: true
       timeout: 10
     # 训记
-    - match: ^https:\/\/xunji\.gxzckj\.com\/whole_user_info_v3
+    - match: ^https:\/\/api\.xunjiapp\.cn\/whole_user_info.+
       name: 训记
-      type: response
-      require-body: true
+      type: request
+      require-body: false
       timeout: 10
     # 考途大学搜题
     - match: ^https:\/\/api-service\.tutusouti\.com\/appServiceApi\/(vip\/newUserPayVipData|video\/videoDetail)
@@ -988,18 +996,7 @@ http:
       timeout: 10
     # 陆琪讲故事
     - match: ^https?:\/\/www\.luqijianggushi\.com\/api
-      name: 陆琪讲故事
-      type: response
-      require-body: true
-      timeout: 10
-    # Tidal音乐
-    - match: ^https?:\/\/api\.tidal\.com\/v1\/users\/\d+\/subscription.+
-      name: TIDALHiFiPlusCrack
-      type: response
-      require-body: true
-      timeout: 10
-    - match: ^https?:\/\/api\.tidal\.com\/v1\/tracks/\d+\/playbackinfopostpaywall.+
-      name: Tidal
+      name: luqijianggushi.response
       type: response
       require-body: true
       timeout: 10
@@ -1057,11 +1054,206 @@ http:
       type: response
       require-body: true
       timeout: 10
-    # 广场
+    # 糖豆-广场舞教学视频
     - match: ^https:\/\/.*\.tangdou\.com\/(?:\w*\/)?\d+\/\d+_\w+\.mp4\?sign=[\w-]+&t=\w+$
       name: 糖豆广场舞
       type: request
       require-body: false
+      timeout: 10
+    # 小白学习打印/小白智慧打印/小白试卷宝
+    - match: ^https?:\/\/api\.xbxxhz\.com\/graphql
+      name: 小白学习
+      type: response
+      require-body: true
+      timeout: 10
+    - match: ^https?:\/\/epbox\.gongfudou\.com\/graphql
+      name: 小白学习
+      type: response
+      require-body: true
+      timeout: 10
+    # Duet Display/DuetAir
+    - match: ^https?:\/\/rdp\.duetdisplay\.com\/v1\/users\/validateReceipt
+      name: DuetDisplay.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 幕布
+    - match: ^https?:\/\/api2\.mubu\.com\/v3\/api\/user\/current_user
+      name: mubu.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 壁纸
+    - match: ^https?:\/\/leancloud\.emotionwp\.com\/.+\/(classes|batch\/save)
+      name: bizhi.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 糖果壁纸
+    - match: ^https?:\/\/w\.5hzs\.com\/player\/index
+      name: tangguo.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 今日香烟
+    - match: ^https?:\/\/smoke\.icar\.ren\/index\.php
+      name: JRXY.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 话本小说
+    - match: ^https?:\/\/.*\.ihuaben\.com\/(api\/userinfo|book\/app\/(vipReadWaitSeconds|book)|function\/bookservice\/authorInfo)
+      name: huabenxiaoshuo.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 虫虫吉他-谱曲
+    - match: ^http:\/\/cc\.lzjoy\.com
+      name: ccjt.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 易百查
+    - match: ^https?:\/\/api\.ebaicha\.com
+      name: yibaicha.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 听书助手
+    - match: ^https?:\/\/www\.huojiwangluo.cn\/ting\/user\/(get|anonylogin)
+      name: tingshuzhushou.response
+      type: response
+      require-body: true
+      timeout: 10
+    # Slopes
+    - match: ^https?:\/\/my\.getslopes\.com\/api\/v\d\/account
+      name: Slopes.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 白描
+    - match: ^https?:\/\/baimiao\.uzero\.cn\/api\/.+\/(appLaunchWithUser|getAnnouncement|checkLoginClient)
+      name: baimiao.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 消防设施三件套-消防/书记/军队
+    - match: ^http:\/\/richapi\.yestiku\.com\/api\/(identity\/listData|questionset\/getInfo)
+      name: richapi.response
+      type: response
+      require-body: true
+      timeout: 10
+# Felo实时翻译
+    - match: ^https?:\/\/translator\.felo\.me\/api\/plan\/current
+      name: Felo.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 凡音钢琴
+    - match: ^https?:\/\/gzfanyin\.com\/api\/ums\/getMember
+      name: fanyingangqin.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 题库大全-好几百个APP
+    - match: ^https?:\/\/(iosapi\.yueshuian|question\.tiku\.cqxcj|base\.cmoe|yyapi\.yayingtk|learn\.cqrry|api\.sryx|api\.meigit|question\.api\.anjiazui|app\.bftk|question\.civil\.shaoeyy)\.(com|top|net).+(common|front\/customer|vip\/getValidTime)
+      name: tiku.response
+      type: response
+      require-body: true
+      timeout: 10
+    # TheGuardian-杂志APP
+    - match: ^https:\/\/members-data-api\.theguardian\.com\/user-attributes\/me
+      name: theguardian.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 看理想
+    - match: ^https://api\.vistopia\.com\.cn/api/v\d/(user/profile|reader/section-detail)
+      name: kanlixiangbd.response
+      type: response
+      require-body: true
+      timeout: 10
+    - match: ^https:\/\/api\.vistopia\.com\.cn\/api\/v\d\/(user\/profile|reader\/section-detail|content\/article_list)
+      name: kanlixiang.request
+      type: request
+      require-body: false
+      timeout: 10
+    # Triplens-拍照翻译
+    - match: ^https:\/\/subscription\.aresframework\.com\/api\/purchase
+      name: Triplens.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 主题-壁纸大全
+    - match: ^http:\/\/wallpaper-zz\.laoyinnianhua\.com\/api\/visitors
+      name: bzdq.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 波点音乐
+    - match: ^https:\/\/bd-api\.kuwo\.cn\/api\/(ucenter\/users|play\/listening\/user|service\/(home\/index|banner\/myPage|advert\/watch))
+      name: bodian.response
+      type: response
+      require-body: true
+      timeout: 10
+    # DreamFace-AI制作
+    - match: ^https:\/\/www\.dreamfaceapp\.com\/df-server\/user\/save_user_login
+      name: DreamFace.response
+      type: response
+      require-body: true
+      timeout: 10
+    # FlipaClip-2维动画工作室
+    - match: ^https:\/\/api\.purchasely\.io\/paab\/user_purchases
+      name: FlipaClip.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 智能助手
+    - match: ^https?:\/\/(www\.kaolahome\.com\/xunnews|cat-revenuecat-qscqkotbrh\.cn-hongkong\.fcapp\.run)\/.+\/(receipts$|subscribers\/?(.*?)*$)
+      name: zhinengzhushou.response
+      type: response
+      require-body: true
+      timeout: 10
+    - match: ^https?:\/\/(www\.kaolahome\.com\/xunnews|cat-revenuecat-qscqkotbrh\.cn-hongkong\.fcapp\.run)\/.+\/(receipts$|subscribers\/?(.*?)*$)
+      name: zhinengzhushou.request
+      type: request
+      require-body: false
+      timeout: 10
+    # BodyOk-间歇性断食追踪
+    - match: ^https:\/\/api\.apphud\.com\/.+\/(subscriptions|customers)$
+      name: BodyOk.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 知音律(需试用)
+    - match: ^https?:\/\/auth\.production\.metronautapp\.cn\/jwt\/refresh
+      name: Zhiyinlv.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 小熊录屏-游戏直播助手
+    - match: ^http:\/\/donate-api\.recorder\.duapps\.com\/pay\/checkAppleSubscribeReceipt
+      name: xiaoxiongluping.response
+      type: response
+      require-body: true
+      timeout: 10
+    # everyday-习惯养成
+    - match: ^https?:\/\/api\.everyday\.app\/users
+      name: everyday.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 遥忘/薄荷壁纸
+    - match: ^https?:\/\/.*\.whalean\.com\/(poseidon-service\/api\/user|member\/userMemberHomePageV2|hestia-service\/api\/wpUser\/getUserInfo)
+      name: yaowangbohe.response
+      type: response
+      require-body: true
+      timeout: 10
+    # 娃娃路
+    - match: ^https:\/\/api\.wawalu\.cn\/wawalu\/practise\/(list.+|download)
+      name: wwl.response
+      type: response
+      require-body: true
       timeout: 10
 
 
@@ -1072,7 +1264,7 @@ http:
     - 'restore-access.indream.app'
     - 'focos.oracle.bendingspoonsapps.com'
     - 'api.bluepulse.cn'
-    - 'wallpaper.soutushenqi.com'
+    - '*.soutushenqi.com'
     - 'lcs-mobile-cops.adobe.io'
     - '*.cyapi.cn'
     - '*.caiyunapp.com'
@@ -1175,7 +1367,7 @@ http:
     - 'www.mymorpholio.com'
     - 'notability.com'
     - '*.oracle.bendingspoonsapps.com'
-    - 'xunji.gxzckj.com'
+    - 'api.xunjiapp.cn'
     - 'api-service.tutusouti.com'
     - 'api-production.endel.io'
     - 'diary-id.sumi.io'
@@ -1238,7 +1430,6 @@ http:
     - 'cdn-bm.camera360.com'
     - 'app.yinxiang.com'
     - 'www.luqijianggushi.com'
-    - 'api.tidal.com'
     - 'api.cs-ide.io'
     - 'www.xiaoxiongyouhao.com'
     - '*-slidebox-ios-prod.cloudfunctions.net'
@@ -1249,10 +1440,141 @@ http:
     - 'hi-api.weshineapp.com'
     - 'api.300624.com'
     - '*.tangdou.com'
+    - 'epbox.gongfudou.com'
+    - 'api.xbxxhz.com'
+    - 'rdp.duetdisplay.com'
+    - 'api2.mubu.com'
+    - 'leancloud.emotionwp.com'
+    - 'w.5hzs.com'
+    - 'smoke.icar.ren'
+    - '*.ihuaben.com'
+    - 'api.ebaicha.com'
+    - 'www.huojiwangluo.cn'
+    - 'my.getslopes.com'
+    - 'baimiao.uzero.cn'
+    - 'translator.felo.me'
+    - 'gzfanyin.com'
+    - 'question.civil.shaoeyy.com'
+    - 'app.bftk.com.cn'
+    - 'question.api.anjiazui.com'
+    - 'api.meigit.com'
+    - 'api.sryx.net'
+    - 'learn.cqrry.com'
+    - 'yyapi.yayingtk.com'
+    - 'base.cmoe.top'
+    - 'question.tiku.cqxcj.top'
+    - 'iosapi.yueshuian.com'
+    - 'members-data-api.theguardian.com'
+    - 'api.vistopia.com.cn'
+    - 'subscription.aresframework.com'
+    - 'bd-api.kuwo.cn'
+    - 'www.dreamfaceapp.com'
+    - 'api.purchasely.io'
+    - 'cat-revenuecat-qscqkotbrh.cn-hongkong.fcapp.run'
+    - 'www.kaolahome.com'
+    - 'api.apphud.com'
+    - 'auth.production.metronautapp.cn'
+    - 'donate-api.recorder.duapps.com'
+    - 'api.everyday.app'
+    - '*.whalean.com'
+    - 'api.wawalu.cn'
 
 
 
 script-providers:
+  wwl.response:
+    url: https://gist.githubusercontent.com/Sliverkiss/daaeab5573613f3adfe28d80ea19760c/raw/wwl.js
+    interval: 86400
+  yaowangbohe.response:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/yaowangbohe.js
+    interval: 86400
+  everyday.response:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/everyday.js
+    interval: 86400
+  xiaoxiongluping.response:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/xiaoxiongluping.js
+    interval: 86400
+  Zhiyinlv.response:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/Zhiyinlv.js
+    interval: 86400
+  BodyOk.response:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/BodyOk.js
+    interval: 86400
+  zhinengzhushou.response:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/zhinengzhushou.js
+    interval: 86400
+  FlipaClip.response:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/FlipaClip.js
+    interval: 86400
+  DreamFace.response:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/DreamFace.js
+    interval: 86400
+  bodian.response:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/bodian.js
+    interval: 86400
+  bzdq.response:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/bzdq.js
+    interval: 86400
+  Triplens.response:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/Triplens.js
+    interval: 86400
+  kanlixiang.request:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/kanlixiang.js
+    interval: 86400
+  kanlixiangbd.response:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/kanlixiangbd.js
+    interval: 86400
+  theguardian.response:
+    url: https://raw.githubusercontent.com/leey668/pyer/main/theguardian.js
+    interval: 86400
+  tiku.response:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/tiku.js
+    interval: 86400
+  fanyingangqin.response:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/fanyingangqin.js
+    interval: 86400
+  Felo.response:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Felo.js
+    interval: 86400
+  richapi.response:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/richapi.js
+    interval: 86400
+  baimiao.response:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/baimiao.js
+    interval: 86400
+  Slopes.response:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Slopes.js
+    interval: 86400
+  tingshuzhushou.response:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/tingshuzhushou.js
+    interval: 86400
+  yibaicha.response:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/yibaicha.js
+    interval: 86400
+  ccjt.response:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/ccjt.js
+    interval: 86400
+  huabenxiaoshuo.response:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/huabenxiaoshuo.js
+    interval: 86400
+  JRXY.response:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/JRXY.js
+    interval: 86400
+  tangguo.response:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/tangguo.js
+    interval: 86400
+  bizhi.response:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/bizhi.js
+    interval: 86400
+  mubu.response:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/mubu.js
+    interval: 86400
+  DuetDisplay.response:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/DuetDisplay.js
+    interval: 86400
+  小白学习:
+    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/xiaobaixuexi.js
+    interval: 86400
   糖豆广场舞:
     url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/Tangdou.js
     interval: 86400
@@ -1282,12 +1604,6 @@ script-providers:
     interval: 86400
   codesnackide:
     url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/codesnackide.js
-    interval: 86400
-  Tidal:
-    url: https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/TIDAL/tidal.js
-    interval: 86400
-  TIDALHiFiPlusCrack:
-    url: https://raw.githubusercontent.com/yqc007/QuantumultX/master/TIDALHiFiPlusCrack.js
     interval: 86400
   陆琪讲故事:
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/luqijianggushi.js
@@ -1461,7 +1777,7 @@ script-providers:
     url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/kaotu.js
     interval: 86400
   训记:
-    url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/xunji.js
+    url: https://raw.githubusercontent.com/Yu9191/Script/main/xunji61109.js
     interval: 86400
   bending:
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/bending.js
