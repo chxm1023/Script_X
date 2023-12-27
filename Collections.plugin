@@ -54,7 +54,7 @@ https?:\/\/omp-audiobookpay\.lrts\.me\/a\.p\?op=get_advertright - reject-dict
 ^http:\/\api\.love\.823123\.com\/facades\/ad_space\.index - reject-200
 # 小白学习开屏广告
 ^https:\/\/api\.xbxxhz\.com\/big_data\/v\d\/home_pages - reject
-#看理想 开屏广告
+# 看理想 开屏广告
 ^https:\/\/api\.vistopia\.com\.cn\/api\/v\d\/home\/advertisement - reject-dict
 
 
