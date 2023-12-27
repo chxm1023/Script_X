@@ -21,6 +21,8 @@
 #=============UserScript=============#
 
 [URL Rewrite]
+# 屏蔽提示更新
+^https?:\/\/firestore\.googleapis\.com - reject-200
 # 彩云天气广告
 ^https?:\/\/ad\.(caiyunapp|cyapi)\.(cn|com) - reject
 ^http:\/\/adx\.sogaha\.cn\/sdk\/ad\/get - reject-200
