@@ -1210,12 +1210,12 @@ http:
       timeout: 10
     # 智能助手
     - match: ^https?:\/\/(www\.kaolahome\.com\/xunnews|cat-revenuecat-qscqkotbrh\.cn-hongkong\.fcapp\.run)\/.+\/(receipts$|subscribers\/?(.*?)*$)
-      name: zhinengzhushou.response
+      name: 智能助手
       type: response
       require-body: true
       timeout: 10
     - match: ^https?:\/\/(www\.kaolahome\.com\/xunnews|cat-revenuecat-qscqkotbrh\.cn-hongkong\.fcapp\.run)\/.+\/(receipts$|subscribers\/?(.*?)*$)
-      name: zhinengzhushou.request
+      name: 智能助手
       type: request
       require-body: false
       timeout: 10
@@ -1510,7 +1510,7 @@ script-providers:
   BodyOk.response:
     url: https://raw.githubusercontent.com/Yu9191/Rewrite/main/BodyOk.js
     interval: 86400
-  zhinengzhushou.response:
+  智能助手:
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/zhinengzhushou.js
     interval: 86400
   FlipaClip.response:
