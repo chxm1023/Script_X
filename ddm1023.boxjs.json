@@ -8,23 +8,23 @@
         {
             "id": "ddm.app.sub",
             "name": "叮当猫脚本开关",
-            "descs_html": [
-                "<p>本频道脚本免费使用，切勿对外传播，请勿贩卖脚本。关注频道 @ddm1023</p>"
-            ],
+            "desc_html": "<p>控制脚本是否启用。<br>关注频道 @ddm1023</p>",
             "keys": ["ddm.app_switch"],
             "settings": [
                 {
                     "id": "ddm.app_switch",
                     "name": "脚本开关",
-                    "val": "false", 
-                    "type": "text",
-                    "desc": "打开:true，关闭:false"
+                    "val": "false",
+                    "type": "boolean",
+                    "desc": "打开：true，关闭：false"
                 }
             ],
             "author": "@ddm1023",
+            "repo": "",
             "icons": [
                 "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm.png"
-            ]
+            ],
+            "script": ""
         }
     ]
 }
