@@ -62,12 +62,12 @@ http:
 
   script:
     # api.Revenuecat.com-解锁合集
-    - match: ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$)
+    - match: ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$)
       name: Reheji
       type: response
       require-body: true
       timeout: 10
-    - match: ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$)
+    - match: ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$)
       name: Reheji
       type: request
       require-body: false
@@ -1268,6 +1268,7 @@ http:
 
   mitm:
     - "api.revenuecat.com"
+    - "api.rc-backup.com"
     - "buy.itunes.apple.com"
     - 'restore-access.indream.app'
     - 'focos.oracle.bendingspoonsapps.com'
