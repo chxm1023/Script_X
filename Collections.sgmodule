@@ -39,7 +39,7 @@ Reheji = type=http-request, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\
 iTunes = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js, requires-body=true, max-size=-1, timeout=60
 
 #Bending-系列 hostname = *.oracle.bendingspoonsapps.com
-.com/ = type=http-response, pattern=^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify), script-path=https://raw.githubusercontent.com/chxm102, requires-body=true, max-size=-1, timeout=60
+bending = type=http-response, pattern=^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/bending.js, requires-body=true, max-size=-1, timeout=60
 
 #Adapty-系列 hostname = api.adapty.io
 adapty = type=http-response, pattern=^https?:\/\/api\.adapty\.io\/api\/v\d\/sdk\/(analytics\/profiles|in-apps\/(apple\/receipt\/validate|purchase-containers)|purchase\/app-store), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/adapty.js, requires-body=true, max-size=-1, timeout=60
