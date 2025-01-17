@@ -35,7 +35,7 @@ http-request ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscri
 http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js, requires-body=true, timeout=60, tag=iTunes
 
 #Bending-系列 hostname = *.oracle.bendingspoonsapps.com
-http-response ^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify) script-path=https://raw.githubusercontent.com/chxm102, requires-body=true, timeout=60, tag=.com/
+http-response ^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/bending.js, requires-body=true, timeout=60, tag=bending
 
 #Adapty-系列 hostname = api.adapty.io
 http-response ^https?:\/\/api\.adapty\.io\/api\/v\d\/sdk\/(analytics\/profiles|in-apps\/(apple\/receipt\/validate|purchase-containers)|purchase\/app-store) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/adapty.js, requires-body=true, timeout=60, tag=adapty
