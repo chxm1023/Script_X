@@ -457,7 +457,7 @@ http-response ^https?:\/\/www\.zhouyilive\.com\/qm-api\/nm_user\.php script-path
 http-response ^https?:\/\/.*\.vlognow\.me\/.*-pay\/api\/v\d\/(user\/subscriptions|public\/iap\/receipt\/status) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Flow.js, requires-body=true, timeout=60, tag=Flow
 
 #时光序-日程备忘清单 hostname = api.weilaizhushou.com
-http-response ^https:\/\/api\.weilaizhushou\.com\/base\/user\/vip\/getUserVip script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/shiguangxu., requires-body=true, timeout=60, tag=shiguangxu
+http-response ^https:\/\/api\.weilaizhushou\.com\/base\/user\/vip\/getUserVip script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/shiguangxu.js, requires-body=true, timeout=60, tag=shiguangxu
 
 #OtterLife-健康分析 hostname = otter-api.codefuture.top
 http-response ^https?:\/\/otter-api\.codefuture\.top\/v\d\/user\/current script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/otterlife.js, requires-body=true, timeout=60, tag=otterlife
