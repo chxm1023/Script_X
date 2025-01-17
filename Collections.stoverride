@@ -16,11 +16,11 @@ desc: 作者：@ddm1023
 
 #=============UserScript=============#
 name: |-
-  local
+  App解锁合集
 desc: |-
-  local
+  @ddm1023
 icon: |-
-  https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1069.png
+  https://raw.githubusercontent.com/chxm1023/Task/main/icon/ddm.png
 
 http:
 
