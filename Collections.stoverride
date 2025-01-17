@@ -253,7 +253,7 @@ http:
 
 #Bending-系列 hostname = *.oracle.bendingspoonsapps.com
     - match: ^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify)
-      name: ".com/_6"
+      name: "bending_6"
       type: response
       require-body: true
       max-size: -1
@@ -1651,8 +1651,8 @@ script-providers:
   "iTunes_4":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js
     interval: 86400
-  ".com/_6":
-    url: https://raw.githubusercontent.com/chxm102
+  "bending_6":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/bending.js
     interval: 86400
   "adapty_8":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/adapty.js
@@ -2164,3 +2164,4 @@ script-providers:
   "mygf_367":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/mygf.js
     interval: 86400
+
