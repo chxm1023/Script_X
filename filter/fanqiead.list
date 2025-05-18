@@ -1,0 +1,69 @@
+# 番茄去广告 @ALLG999
+PROCESS-NAME,com.dragon.read,番茄小说
+
+# 📍 精准域名拦截
+DOMAIN,p6-ad-sign.byteimg.com,REJECT
+DOMAIN,p9-ad-sign.byteimg.com,REJECT
+DOMAIN,ads0-normal-lq.zijieapi.com,REJECT
+DOMAIN,ads1-normal-lq.zijieapi.com,REJECT
+DOMAIN,ads2-normal-lq.zijieapi.com,REJECT
+DOMAIN,ads3-normal-lq.zijieapi.com,REJECT
+DOMAIN,ads4-normal-lq.zijieapi.com,REJECT
+DOMAIN,ads5-normal-lq.zijieapi.com,REJECT
+
+# 🧬 广告推送/回传接口拦截
+DOMAIN,api-access.pangolin-sdk-toutiao.com,REJECT
+DOMAIN,api-access.pangolin-sdk-toutiao1.com,REJECT
+DOMAIN,i-lq-snssdk.com,REJECT
+DOMAIN,i.snssdk.com,REJECT
+DOMAIN,is.snssdk.com,REJECT
+DOMAIN,mcs.snssdk.com,REJECT
+
+# 🔍 TNC 系列追踪/配置节点屏蔽
+DOMAIN,tnc0-aliec1.zijieapi.com,REJECT
+DOMAIN,tnc0-aliec2.zijieapi.com,REJECT
+DOMAIN,tnc0-aliec3.zijieapi.com,REJECT
+DOMAIN,tnc1-aliec1.zijieapi.com,REJECT
+DOMAIN,tnc1-aliec2.zijieapi.com,REJECT
+DOMAIN,tnc1-aliec3.zijieapi.com,REJECT
+DOMAIN,tnc2-aliec1.zijieapi.com,REJECT
+DOMAIN,tnc2-aliec2.zijieapi.com,REJECT
+DOMAIN,tnc2-aliec3.zijieapi.com,REJECT
+DOMAIN,tnc3-aliec1.zijieapi.com,REJECT
+DOMAIN,tnc3-aliec2.zijieapi.com,REJECT
+DOMAIN,tnc3-aliec3.zijieapi.com,REJECT
+
+# 🛡️ 杂项广告/监控域名
+DOMAIN,activity-ag.awemeughun.com,REJECT
+DOMAIN,security-lq.snssdk.com,REJECT
+DOMAIN,v6-novelapp.ixigua.com,REJECT
+DOMAIN,*novelapp.ixigua.com,REJECT
+DOMAIN,*default.ixigua.com,REJECT
+DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net,REJECT
+DOMAIN,api.iegadp.qq.com,REJECT
+DOMAIN,sf3-ttcdn-tos.pstatp.com,REJECT
+
+# 🌍 域名后缀屏蔽（字节跳动/京东相关）
+DOMAIN-SUFFIX,byteimg.com,DIRECT
+DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
+DOMAIN-SUFFIX,byteorge.com,REJECT
+DOMAIN-SUFFIX,bytegoofy.com,REJECT
+DOMAIN-SUFFIX,bytedance.com,REJECT
+DOMAIN,360buyimg.com,REJECT
+DOMAIN,buysecm.com,REJECT
+
+# 📌 泛关键词拦截（低精度但广覆盖）
+DOMAIN-KEYWORD,zijieapi,REJECT
+DOMAIN-KEYWORD,api,REJECT
+DOMAIN-KEYWORD,sdk,REJECT
+DOMAIN-KEYWORD,ad,REJECT
+DOMAIN-KEYWORD,video,REJECT
+DOMAIN-KEYWORD,img,REJECT
+
+# 🧭 特定 IP 黑名单（静态封锁某些广告节点）
+IP-CIDR,49.71.37.101/32,REJECT,no-resolve
+IP-CIDR,117.71.105.23/32,REJECT,no-resolve
+IP-CIDR,218.94.207.205/32,REJECT,no-resolve
+IP-CIDR,117.92.229.188/32,REJECT,no-resolve
+IP-CIDR,101.36.166.16/32,REJECT,no-resolve
+IP-CIDR,180.96.2.114/32,REJECT,no-resolve
