@@ -12,7 +12,7 @@ desc: 作者：@ddm1023
 # 特别说明：此脚本可能会导致App Store无法登录
 # 解决方法：关[MITM][脚本][代理工具]方法选一即可
 
-# 更新日期：2025-01-17
+# 更新日期：2026-02-19
 
 #=============UserScript=============#
 
@@ -26,9 +26,23 @@ icon: |-
 http:
 
   mitm:
+    - "api.alar.my"
+    - "api.everyday.app"
+    - "ifttt.com"
+    - "firstclass.tripsy.app"
+    - "*-api.notedapp.io"
+    - "qdq.9sm.net"
+    - "rc.visionarytech.ltd"
+    - "bzpp3.iwzbz.com"
+    - "calendarsrv.iwzwh.com"
+    - "*.cloudfunctions.net"
+    - "*.appsflyersdk.com"
+    - "*.linearity.io"
+    - "nicegram.cloud"
+    - "restore-access.indream.app"
+    - "api.mbrx.app"
     - "moyin-gateway.moyin.com"
     - "subscription-api.lyrebirdstudio.net"
-    - "firstclass.tripsy.app"
     - "service.perfect365.com"
     - "yimuapp.com"
     - "appv2.filmix.com.cn"
@@ -206,7 +220,6 @@ http:
     - "*.cyapi.cn"
     - "*.soutushenqi.com"
     - "api.bluepulse.cn"
-    - "nicegram.cloud"
     - "*.snow.me"
     - "*.apphud.com"
     - "api.qonversion.io"
@@ -233,20 +246,20 @@ http:
   script:
 #Revenuecat-系列 hostname = api.revenuecat.com, api.rc-backup.com
     - match: ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$)
-      name: "Reheji_1"
+      name: "Reheji_13"
       type: response
       require-body: true
       max-size: -1
       timeout: 60
 
     - match: ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$)
-      name: "Reheji_1"
+      name: "Reheji_13"
       type: request
       timeout: 60
 
 #iTunes-系列 hostname = buy.itunes.apple.com
     - match: ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$
-      name: "iTunes_4"
+      name: "iTunes_16"
       type: response
       require-body: true
       max-size: -1
@@ -254,7 +267,7 @@ http:
 
 #Bending-系列 hostname = *.oracle.bendingspoonsapps.com
     - match: ^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify)
-      name: "bending_6"
+      name: "bending_18"
       type: response
       require-body: true
       max-size: -1
@@ -262,7 +275,7 @@ http:
 
 #Adapty-系列 hostname = api.adapty.io
     - match: ^https?:\/\/api\.adapty\.io\/api\/v\d\/sdk\/(analytics\/profiles|in-apps\/(apple\/receipt\/validate|purchase-containers)|purchase\/app-store)
-      name: "adapty_8"
+      name: "adapty_20"
       type: response
       require-body: true
       max-size: -1
@@ -270,7 +283,7 @@ http:
 
 #Qonversion-系列 hostname = api.qonversion.io
     - match: ^https?:\/\/api\.qonversion\.io\/v\d\/user\/(init|purchase)
-      name: "qonversion_10"
+      name: "qonversion_22"
       type: response
       require-body: true
       max-size: -1
@@ -278,7 +291,7 @@ http:
 
 #Apphud-系列 hostname = *.apphud.com
     - match: ^https?:\/\/.*\.apphud\.com\/v\d\/(subscriptions|customers)$
-      name: "apphud_12"
+      name: "apphud_24"
       type: response
       require-body: true
       max-size: -1
@@ -286,7 +299,7 @@ http:
 
 #SNOW-系列 hostname = *.snow.me
     - match: ^https?:\/\/.*\.snow\.me\/v\d\/purchase\/subscription\/subscriber\/status
-      name: "snow_14"
+      name: "snow_26"
       type: response
       require-body: true
       max-size: -1
@@ -294,7 +307,7 @@ http:
 
 #绘影字幕 hostname = api.bluepulse.cn
     - match: ^https?:\/\/api\.bluepulse\.cn\/bluepulse-caption-server-front\/api\/.+\/user\/app-vip-info
-      name: "hyzm_16"
+      name: "hyzm_28"
       type: response
       require-body: true
       max-size: -1
@@ -302,7 +315,7 @@ http:
 
 #搜图神器 hostname = *.soutushenqi.com
     - match: ^https?:\/\/.*\.soutushenqi\.com\/(api\/.+\/account\/(token|info)|cykj_community|v\d\/home\/dialog)
-      name: "soutu_18"
+      name: "soutu_30"
       type: response
       require-body: true
       max-size: -1
@@ -310,7 +323,7 @@ http:
 
 #彩云天气-广告净化/弹窗AD/去除亲友卡/去除悬浮模块 hostname = *.cyapi.cn
     - match: ^https?:\/\/(ad|biz|wrapper|starplucker)\.cyapi\.cn\/.+\/((activity\?app_name|operation|config|req\?app_name=weather)|v\d\/(trial_card\/info|entries|friend_cards|token\/device))
-      name: "caiyuntianqi_20"
+      name: "caiyuntianqi_32"
       type: response
       require-body: true
       max-size: -1
@@ -318,7 +331,7 @@ http:
 
 #彩云天气-VIP信息
     - match: ^https?:\/\/(biz|wrapper|starplucker)\.cyapi\.cn\/(v\d\/user\?app_name|.+\/v\d\/(vip_info|user_detail))
-      name: "caiyuntianqi_20"
+      name: "caiyuntianqi_32"
       type: response
       require-body: true
       max-size: -1
@@ -326,13 +339,13 @@ http:
 
 #彩云天气-SVIP地图-48小时预报
     - match: ^https?:\/\/(api|wrapper)\.cyapi\.cn\/v\d\/(satellite|nafp\/origin_images)
-      name: "caiyuntianqi_20"
+      name: "caiyuntianqi_32"
       type: request
       timeout: 60
 
 #一言 hostname = app.yiyan.art
     - match: ^https?:\/\/app\.yiyan\.art\/yiyan
-      name: "yiyan_26"
+      name: "yiyan_38"
       type: response
       require-body: true
       max-size: -1
@@ -340,7 +353,7 @@ http:
 
 #网速管家 hostname = api*.speedtest.cn
     - match: ^https?:\/\/api.*\.speedtest\.cn\/user\/info
-      name: "wsgj_28"
+      name: "wsgj_40"
       type: response
       require-body: true
       max-size: -1
@@ -348,7 +361,7 @@ http:
 
 #Emby(解锁播放权限) hostname = mb3admin.com
     - match: ^https?:\/\/mb3admin\.com\/admin\/service(\/registration\/validateDevice|\/appstore\/register|\/registration\/validate|\/registration\/getStatus|\/supporter\/retrievekey)
-      name: "embycrack_30"
+      name: "embycrack_42"
       type: response
       require-body: true
       max-size: -1
@@ -356,7 +369,7 @@ http:
 
 #扫描全能王 hostname = *.camscanner.com, *.intsig.net
     - match: ^https?:\/\/.*\.(intsig\.net|camscanner\.com)
-      name: "CamScanner_32"
+      name: "CamScanner_44"
       type: response
       require-body: true
       max-size: -1
@@ -364,7 +377,7 @@ http:
 
 #百度网盘，一刻相册 解锁部分功能 hostname = pan.baidu.com
     - match: ^https?:\/\/pan\.baidu\.com\/(youai\/(user\/.+\/getminfo|membership\/.+\/adswitch)|(rest\/.+\/membership\/user|act\/.+\/(bchannel|welfare)\/list|api\/usercfg))
-      name: "bdcloud_34"
+      name: "bdcloud_46"
       type: response
       require-body: true
       max-size: -1
@@ -372,7 +385,7 @@ http:
 
 #Picsart美易_图片视频编辑器 hostname = api.meiease.cn
     - match: ^https?:\/\/api\.meiease\.cn\/shop\/subscription\/(validate|apple\/purchases)
-      name: "picsart_36"
+      name: "picsart_48"
       type: response
       require-body: true
       max-size: -1
@@ -380,7 +393,7 @@ http:
 
 #起伏 hostname = api.risingfalling.com
     - match: https?:\/\/api\.risingfalling\.com\/api\/vip\/detail
-      name: "qifu_38"
+      name: "qifu_50"
       type: response
       require-body: true
       max-size: -1
@@ -388,15 +401,15 @@ http:
 
 #布丁锁屏 hostname = screen-lock.*.com
     - match: ^https?:\/\/screen-lock\.(sm-check|51wnl-cq)\.com\/userApi\/saveUser.+
-      name: "bdsp_40"
+      name: "bdsp_52"
       type: response
       require-body: true
       max-size: -1
       timeout: 60
 
 #Wallcraft-动态壁纸 hostname =billing-ios.wallpaperscraft.com
-    - match: ^https?:\/\/billing-ios\.wallpaperscraft\.com\/(verify_receipt|products)\/remove_ads$
-      name: "Wall_42"
+    - match: ^https?:\/\/billing-ios\.wallpaperscraft\.com\/v\d\/(verify_receipt|products)\/remove_ads
+      name: "Wall_54"
       type: response
       require-body: true
       max-size: -1
@@ -404,7 +417,7 @@ http:
 
 #堆糖 hostname = *.duitang.com
     - match: ^https?:\/\/.*\.duitang\.com\/napi
-      name: "duitang_44"
+      name: "duitang_56"
       type: response
       require-body: true
       max-size: -1
@@ -412,7 +425,7 @@ http:
 
 #Boom hostname = apimboom2.globaldelight.net
     - match: ^https?:\/\/apimboom2\.globaldelight\.net\/itunesreceipt_v2\.php$
-      name: "boom_46"
+      name: "boom_58"
       type: response
       require-body: true
       max-size: -1
@@ -420,7 +433,7 @@ http:
 
 #傲软抠图，傲软扫描，傲软PDF转换，傲软PDF编辑，傲软投屏，咖映，轻闪PDF，乃糖小组件，佐糖，佐糖照片修复 hostname = *.aoscdn.com, *.apsapp.cn
     - match: ^https?:\/\/.*\.(aoscdn\.com|apsapp\.cn)
-      name: "arqjt_48"
+      name: "arqjt_60"
       type: response
       require-body: true
       max-size: -1
@@ -428,7 +441,7 @@ http:
 
 #Agenda-当笔记遇见日历 hostname = accounts.agenda.com
     - match: ^https?:\/\/accounts\.agenda\.com\/users\/.*\/license
-      name: "Agenda_50"
+      name: "Agenda_62"
       type: response
       require-body: true
       max-size: -1
@@ -436,7 +449,7 @@ http:
 
 #云听-全国电台/有声听书 hostname = *.radio.cn, 60.205.171.165
     - match: (^https?:\/\/(ytmsout|ytapi|getway)\.radio\.cn|60\.205\.171\.165)\/(contentBiz|publish|rights|(user|ytsrv\/srv)\/(appUser|webPage)\/getUserInfo|app.+)
-      name: "yunting_52"
+      name: "yunting_64"
       type: response
       require-body: true
       max-size: -1
@@ -444,7 +457,7 @@ http:
 
 #Cubox-收藏阅读 hostname = cubox.*
     - match: ^https?:\/\/cubox\.(pro|cc)\/.+\/api\/userInfo
-      name: "Cb_54"
+      name: "Cb_66"
       type: response
       require-body: true
       max-size: -1
@@ -452,7 +465,7 @@ http:
 
 #小组件盒子 hostname = widget-box-api.codefuture.top
     - match: ^https?:\/\/widget-box-api\.codefuture\.top\/.+\/users\/me
-      name: "xzjhz_56"
+      name: "xzjhz_68"
       type: response
       require-body: true
       max-size: -1
@@ -460,7 +473,7 @@ http:
 
 #格式转换 hostname = format-api.netpock.com
     - match: http:\/\/format-api\.netpock\.com\/api\/user_info
-      name: "gszh_58"
+      name: "gszh_70"
       type: response
       require-body: true
       max-size: -1
@@ -468,7 +481,7 @@ http:
 
 #手机扫描，图片编辑，九宫格切图，头像制作，早安打卡，配音 hostname = *.dicallapp.com
     - match: http:\/\/.*\.dicallapp\.com
-      name: "zhfqjt_60"
+      name: "zhfqjt_72"
       type: response
       require-body: true
       max-size: -1
@@ -476,7 +489,7 @@ http:
 
 #如期 hostname = www.freshhome.top
     - match: ^https?:\/\/www\.freshhome\.top
-      name: "rq_62"
+      name: "rq_74"
       type: response
       require-body: true
       max-size: -1
@@ -484,7 +497,7 @@ http:
 
 #iLove PDF hostname = service.ilovepdf.com
     - match: ^https?:\/\/service\.ilovepdf\.com\/.+\/user
-      name: "ilove_64"
+      name: "ilove_76"
       type: response
       require-body: true
       max-size: -1
@@ -492,7 +505,7 @@ http:
 
 #VN-视频剪辑 hostname = api2.vlognow.me
     - match: ^https?:\/\/api2\.vlognow\.me\/vn-pay\/api\/.+\/public\/iap\/receipt\/status?(.*?)*$
-      name: "vn_66"
+      name: "vn_78"
       type: response
       require-body: true
       max-size: -1
@@ -500,7 +513,7 @@ http:
 
 #日杂相机，fomz相机 hostname = *.imendon.com
     - match: ^https:\/\/.*\.imendon\.com\/v\d\/purchase\/vip\/verification
-      name: "lgxj_68"
+      name: "lgxj_80"
       type: response
       require-body: true
       max-size: -1
@@ -508,7 +521,7 @@ http:
 
 #极简扫描 hostname = cn.czur.cc
     - match: ^https?:\/\/cn\.czur\.cc\/api\/.+\/User\/info?(.*?)
-      name: "jjsm_70"
+      name: "jjsm_82"
       type: response
       require-body: true
       max-size: -1
@@ -516,7 +529,7 @@ http:
 
 #PhotoSlip-照片清理大师 hostname = www2.tigeroom.com
     - match: ^https?:\/\/www2\.tigeroom\.com
-      name: "zpqlds_72"
+      name: "zpqlds_84"
       type: response
       require-body: true
       max-size: -1
@@ -524,7 +537,7 @@ http:
 
 #猫头鹰文件管理 hostname = www.skyjos.cn
     - match: ^https?:\/\/www\.skyjos\.cn
-      name: "mtywj_74"
+      name: "mtywj_86"
       type: response
       require-body: true
       max-size: -1
@@ -532,7 +545,7 @@ http:
 
 #爱剪辑 hostname = api.open.loveclip.site
     - match: ^https?:\/\/api\.open\.loveclip\.site\/UserInfo\/(UserPersonalCoreAsync|GetUserDetail)
-      name: "ajj_76"
+      name: "ajj_88"
       type: response
       require-body: true
       max-size: -1
@@ -540,7 +553,7 @@ http:
 
 #六个解锁合集（Collart，拼图趣，睡前故事大全，网速测速大师，测速管家，Pixelance） hostname = iap.etm.tech
     - match: ^https?:\/\/iap\.etm\.tech\/receipts
-      name: "Collart_78"
+      name: "Collart_90"
       type: response
       require-body: true
       max-size: -1
@@ -548,7 +561,7 @@ http:
 
 #极简汇率 hostname = xremit.xcurrency.com, explorer.tratao.com
     - match: ^https?:\/\/(xremit\.xcurrency|explorer.tratao)\.com\/api\/client\/xtool\/vip
-      name: "jijianhuilv_80"
+      name: "jijianhuilv_92"
       type: response
       require-body: true
       max-size: -1
@@ -556,7 +569,7 @@ http:
 
 #AdGuard-Safari浏览器扩展 hostname = mobile-api.adguard.org
     - match: ^https?:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt\/(.*?)
-      name: "AdGuard_82"
+      name: "AdGuard_94"
       type: response
       require-body: true
       max-size: -1
@@ -564,7 +577,7 @@ http:
 
 #番薯小说 hostname = ggs.manmeng168.com
     - match: ^https?:\/\/ggs\.manmeng168\.com
-      name: "fanshuxiaoshuo_84"
+      name: "fanshuxiaoshuo_96"
       type: response
       require-body: true
       max-size: -1
@@ -572,7 +585,7 @@ http:
 
 #阅读记录 hostname = app.yidiansz.com
     - match: ^https?:\/\/app\.yidiansz\.com\/api\/.+\/app\/user\/info?(.*?)*$
-      name: "ydjl_86"
+      name: "ydjl_98"
       type: response
       require-body: true
       max-size: -1
@@ -580,7 +593,7 @@ http:
 
 #美颜相机 hostname = *.meiyan.com
     - match: ^https?:\/\/(api|community)\.meiyan\.com\/(vip|v\d)\/(user_center|user_info|user\/(.*?))
-      name: "myxj_88"
+      name: "myxj_100"
       type: response
       require-body: true
       max-size: -1
@@ -588,7 +601,7 @@ http:
 
 #Wink，蛋啵，潮自拍，海报工厂，Chic hostname = api-*.meitu.com
     - match: ^https?:\/\/api-.*\.meitu\.com\/(.+\/user\/vip_info|user\/show)
-      name: "mtxl_90"
+      name: "mtxl_102"
       type: response
       require-body: true
       max-size: -1
@@ -596,7 +609,7 @@ http:
 
 #美图秀秀 hostname = *.xiuxiu.meitu.com, api.posters.meitu.com, api-*.meitu.com
     - match: ^https?:\/\/((h5|api)\.xiuxiu|api-sub|api\.posters)\.meitu\.com\/.+\/(vip|user|h\d|center|home)
-      name: "mtxx_92"
+      name: "mtxx_104"
       type: response
       require-body: true
       max-size: -1
@@ -604,7 +617,7 @@ http:
 
 #Fimo_复古胶片相机 hostname = fimo.appfimo.com
     - match: ^https?:\/\/fimo\.appfimo\.com\/fimo-.*\/(user|apple\/certificate|config|startPopConfig|filmAll)
-      name: "fimo_94"
+      name: "fimo_106"
       type: response
       require-body: true
       max-size: -1
@@ -612,7 +625,7 @@ http:
 
 #小习惯-打卡App hostname = xianbeikeji.com
     - match: ^https?:\/\/xianbeikeji\.com\/daily\/app\/user\/query
-      name: "xxg_96"
+      name: "xxg_108"
       type: response
       require-body: true
       max-size: -1
@@ -620,7 +633,7 @@ http:
 
 #Mate-翻译神器 hostname = asia.gikken.co
     - match: ^https?:\/\/asia\.gikken\.co\/matesync\/(subscription|login|register_user|check_user)
-      name: "mate_98"
+      name: "mate_110"
       type: response
       require-body: true
       max-size: -1
@@ -628,7 +641,7 @@ http:
 
 #得间小说 hostname = dj.palmestore.com
     - match: ^https?:\/\/dj\.palmestore\.com\/zyuc\/api\/user\/accountInfo
-      name: "dejianxiaoshuo_100"
+      name: "dejianxiaoshuo_112"
       type: response
       require-body: true
       max-size: -1
@@ -636,7 +649,7 @@ http:
 
 #倒数纪念日 hostname = day-api.xixitime.com
     - match: ^https?:\/\/day-api\.xixitime\.com
-      name: "dsjnr_102"
+      name: "dsjnr_114"
       type: response
       require-body: true
       max-size: -1
@@ -644,7 +657,7 @@ http:
 
 #青柠设计-P图抠图海报 hostname = *.qingning6.com
     - match: ^https?:\/\/.*\.qingning6\.com\/api\/(user\/getUserInfo|team\/teamInfo)
-      name: "qnsj_104"
+      name: "qnsj_116"
       type: response
       require-body: true
       max-size: -1
@@ -652,7 +665,7 @@ http:
 
 #配音秀 hostname = iosapi.peiyinxiu.com
     - match: ^https?:\/\/iosapi\.peiyinxiu\.com
-      name: "peiyinxiu_106"
+      name: "peiyinxiu_118"
       type: response
       require-body: true
       max-size: -1
@@ -660,7 +673,7 @@ http:
 
 #小时尚 hostname = kongque.twan.cn
     - match: ^https?:\/\/kongque\.twan\.cn\/index.+\/admin\/appberrycustomer.+
-      name: "xiaoshishang_108"
+      name: "xiaoshishang_120"
       type: response
       require-body: true
       max-size: -1
@@ -668,7 +681,7 @@ http:
 
 #计算器HD，万能播放器，万能变声器，塔罗牌，Art Widget(小组件)，memo(标签小组件)，NFC标签读写器工具，(一共解锁七个App) hostname = www.40sishi.com
     - match: ^https?:\/\/www\.40sishi\.com
-      name: "40sishi_110"
+      name: "40sishi_122"
       type: response
       require-body: true
       max-size: -1
@@ -676,7 +689,7 @@ http:
 
 #薄荷健康 hostname = api.boohee.com
     - match: ^https?:\/\/api\.boohee\.com\/app-interface\/.+\/user\/user_info
-      name: "bohejiankang_112"
+      name: "bohejiankang_124"
       type: response
       require-body: true
       max-size: -1
@@ -684,7 +697,7 @@ http:
 
 #菜谱大全，烘焙小屋，香哈菜谱 hostname = *.xiangha.com
     - match: ^https?:\/\/api.*\.xiangha\.com\/.+\/([Uu]ser\/(getUserData|info)|pay\/home|dish|home\/getUser|school)
-      name: "caipu_114"
+      name: "caipu_126"
       type: response
       require-body: true
       max-size: -1
@@ -692,7 +705,7 @@ http:
 
 #排班日历-倒班助手 hostname = schedule-api.julanling.com
     - match: ^https?:\/\/schedule-api\.julanling\.com\/api\/(get_member_info|vip_detail)
-      name: "paibanrili_116"
+      name: "paibanrili_128"
       type: response
       require-body: true
       max-size: -1
@@ -700,7 +713,7 @@ http:
 
 #挖财记账 hostname = jz.wacaijizhang.com
     - match: ^https?:\/\/jz\.wacaijizhang\.com\/(api\/(my\/v\d|vipmember\/v\d\/index|usercenter\/userInfo)|jz-activity\/bkk-frontier\/api\/vipmember\/v\d\/index)
-      name: "wacaijizhang_118"
+      name: "wacaijizhang_130"
       type: response
       require-body: true
       max-size: -1
@@ -708,7 +721,7 @@ http:
 
 #野果阅读 hostname = yeguo.236api.com
     - match: ^https?:\/\/yeguo\.236api\.com
-      name: "yeguoyuedu_120"
+      name: "yeguoyuedu_132"
       type: response
       require-body: true
       max-size: -1
@@ -716,7 +729,7 @@ http:
 
 #蜗牛睡眠 hostname = snailsleep.net
     - match: ^https?:\/\/snailsleep\.net\/snail\/v\d\/profile\/get.+
-      name: "woniushuimian_122"
+      name: "woniushuimian_134"
       type: response
       require-body: true
       max-size: -1
@@ -724,7 +737,7 @@ http:
 
 #网易蜗牛读书 hostname = p.du.163.com
     - match: ^https?:\/\/p\.du\.163\.com\/gain\/readtime\/info
-      name: "wywnds_124"
+      name: "wywnds_136"
       type: response
       require-body: true
       max-size: -1
@@ -732,7 +745,7 @@ http:
 
 #DailyArt(每日艺术) hostname = api.getdailyart.com
     - match: ^https?:\/\/api\.getdailyart\.com\/api\/(subscription\/verified|auth\/login|check-logged)
-      name: "DailyArt_126"
+      name: "DailyArt_138"
       type: response
       require-body: true
       max-size: -1
@@ -740,7 +753,7 @@ http:
 
 #录屏，大神P图，乐秀，多功能视频剪辑 hostname = *.videoshowiosglobalserver.com, *.enjoy-mobi.com
     - match: ^https?:\/\/.*\.(videoshowiosglobalserver|enjoy-mobi)\.com\/zone\/.+\/(iosPayClient\/(payVerify|imeiVerify)|startPageAd\/getAds)
-      name: "VideoShow_128"
+      name: "VideoShow_140"
       type: response
       require-body: true
       max-size: -1
@@ -748,7 +761,7 @@ http:
 
 #iTranslate 翻译 hostname = ssl-api.itranslateapp.com
     - match: ^https?:\/\/ssl-api\.itranslateapp\.com\/accounts\/.+\/(subscriptions\/verify|marketing\/consent\/status)
-      name: "itranslate_130"
+      name: "itranslate_142"
       type: response
       require-body: true
       max-size: -1
@@ -756,7 +769,7 @@ http:
 
 #Icon Killer，字体册，充电助手，声波助手 hostname = api.yonekura.cn
     - match: ^https?:\/\/api\.yonekura\.cn\/.+\/uicommon\/getuser
-      name: "yonekura_132"
+      name: "yonekura_144"
       type: response
       require-body: true
       max-size: -1
@@ -764,7 +777,7 @@ http:
 
 #Calendars 日历/计划 hostname = license.pdfexpert.com
     - match: ^https?:\/\/license\.pdfexpert\.com\/api\/.+\/calendarslite\/subscription\/refresh
-      name: "calendars_134"
+      name: "calendars_146"
       type: response
       require-body: true
       max-size: -1
@@ -772,7 +785,7 @@ http:
 
 #WPS Office hostname = *.wps.cn
     - match: ^https?:\/\/(vas|account|drive)\.wps\.cn\/(query\/api\/.+\/list_purchase_info|api\/(v\d\/spaces|users\/.+\/overview))
-      name: "WPS_136"
+      name: "WPS_148"
       type: response
       require-body: true
       max-size: -1
@@ -780,7 +793,7 @@ http:
 
 #墨迹天气 hostname = *.api.moji.com
     - match: ^https?:\/\/.*\.api\.moji\.com\/(sns\/json\/profile\/get_info_.+|json\/member_new\/homepage_info.+|user\/personal\/json\/profile_.+|flycard\/novice|shortvideo\/.+)
-      name: "mojitianqi_138"
+      name: "mojitianqi_150"
       type: response
       require-body: true
       max-size: -1
@@ -788,7 +801,7 @@ http:
 
 #Pixelup AI照片增强器 hostname = receipt-verifier.cdwapi.com
     - match: ^https?:\/\/receipt-verifier\.cdwapi\.com\/receipt
-      name: "Pixelup_142"
+      name: "Pixelup_154"
       type: response
       require-body: true
       max-size: -1
@@ -796,7 +809,7 @@ http:
 
 #iScreen小组件 hostname = *.kuso.xyz
     - match: ^https?:\/\/cs\.kuso\.xyz\/configs.+
-      name: "iscreenfz_144"
+      name: "iscreenfz_156"
       type: response
       require-body: true
       max-size: -1
@@ -804,7 +817,7 @@ http:
 
 #旅途随身听 hostname = www.1314zhilv.com
     - match: ^https?:\/\/www\.1314zhilv\.com\/ltsstnew\/(user.*\/getInfo|guideScenic)
-      name: "ltsst_148"
+      name: "ltsst_160"
       type: response
       require-body: true
       max-size: -1
@@ -812,7 +825,7 @@ http:
 
 #问真排盘 hostname = bzpp2.iwzbz.com
     - match: ^https?:\/\/bzpp2\.iwzbz\.com\/api\/.+\/(user\/getvipinfo|User\/getWXPW)
-      name: "wenzhenpaipan_150"
+      name: "wenzhenpaipan_162"
       type: response
       require-body: true
       max-size: -1
@@ -820,7 +833,7 @@ http:
 
 #经济学人·商论 hostname = api.hummingbird.businessreview.global
     - match: ^https:\/\/api\.hummingbird\.businessreview\.global\/api\/subscriptions\/get_active
-      name: "jjxrsl_152"
+      name: "jjxrsl_164"
       type: response
       require-body: true
       max-size: -1
@@ -828,7 +841,7 @@ http:
 
 #flomo hostname = fl*app.com
     - match: ^https:\/\/fl.*app\.com\/api\/v\d\/user\/me
-      name: "lofo_154"
+      name: "lofo_166"
       type: response
       require-body: true
       max-size: -1
@@ -836,15 +849,15 @@ http:
 
 #Hyperweb Safari浏览器扩展 hostname = zy6kcqa01a.execute-api.us-east-2.amazonaws.com
     - match: ^https?:\/\/zy6kcqa01a\.execute-api\.us-east-2\.amazonaws\.com\/prod\/verifyReceipt
-      name: "Hyperweb_156"
+      name: "Hyperweb_168"
       type: response
       require-body: true
       max-size: -1
       timeout: 60
 
 #TimeTree日历 hostname = api.timetreeapp.com
-    - match: ^https?:\/\/api\.timetreeapp\.com\/.+\/user\/.+
-      name: "TimeTree_158"
+    - match: ^https?:\/\/api\.timetreeapp\.com\/.+\/user\/subscription
+      name: "TimeTree_170"
       type: response
       require-body: true
       max-size: -1
@@ -852,7 +865,7 @@ http:
 
 #有谱么 hostname = yopu.co
     - match: ^https?:\/\/yopu\.co\/api\/user\/info
-      name: "youpume_160"
+      name: "youpume_172"
       type: response
       require-body: true
       max-size: -1
@@ -860,7 +873,7 @@ http:
 
 #Endel hostname = api-production.endel.io
     - match: ^https?:\/\/api-production\.endel\.io\/v\d\/call
-      name: "Endel_162"
+      name: "Endel_174"
       type: response
       require-body: true
       max-size: -1
@@ -868,7 +881,7 @@ http:
 
 #日历假期 hostname = calendar.aiyohoo.com
     - match: ^https?:\/\/calendar\.aiyohoo\.com\/api\/.+\/(user\/device|calendar\/dev_auth)
-      name: "rljq_164"
+      name: "rljq_176"
       type: response
       require-body: true
       max-size: -1
@@ -876,7 +889,7 @@ http:
 
 #格志日记 hostname = diary-id.sumi.io
     - match: ^https?:\/\/diary-id\.sumi\.io\/api\/profile
-      name: "gezhi_166"
+      name: "gezhi_178"
       type: response
       require-body: true
       max-size: -1
@@ -884,7 +897,7 @@ http:
 
 #泼辣修图 hostname = api.polaxiong.com
     - match: ^https?:\/\/api\.polaxiong\.com\/.+\/payments\/(profiles\/.+\/subscription|appleiap\/receipts\/confirmation)
-      name: "pola_168"
+      name: "pola_180"
       type: response
       require-body: true
       max-size: -1
@@ -892,7 +905,7 @@ http:
 
 #人人视频 hostname = api.hujuvod.com, api.qwapp.top
     - match: ^https?:\/\/api\.(hujuvod\.com|qwapp\.top)\/(user\/personal\/information|app\/drama\/page)
-      name: "renrenshipin_170"
+      name: "renrenshipin_182"
       type: response
       require-body: true
       max-size: -1
@@ -900,7 +913,7 @@ http:
 
 #心脏+ hostname = api.995120.cn
     - match: ^https:\/\/api\.995120\.cn\/mini\/api\/appleplus
-      name: "xinzang_172"
+      name: "xinzang_184"
       type: response
       require-body: true
       max-size: -1
@@ -908,7 +921,7 @@ http:
 
 #360相机 hostname = *.camera360.com
     - match: ^https?:\/\/.*\.camera360\.com\/(api\/(order\/purchase|iap\/check-receipt)|v\d\/operational-positions)
-      name: "360xj_174"
+      name: "360xj_186"
       type: response
       require-body: true
       max-size: -1
@@ -916,7 +929,7 @@ http:
 
 #一键抠图 hostname = api.mattingm.com
     - match: ^https?:\/\/api\.mattingm\.com\/receipt_api\/user\/info
-      name: "yijiankoutu_176"
+      name: "yijiankoutu_188"
       type: response
       require-body: true
       max-size: -1
@@ -924,7 +937,7 @@ http:
 
 #畅玩空间 hostname = play.wo1wan.com
     - match: ^https?:\/\/play\.wo1wan\.com\/nextgame\/igwuser\/userinfo
-      name: "changwan_178"
+      name: "changwan_190"
       type: response
       require-body: true
       max-size: -1
@@ -932,7 +945,7 @@ http:
 
 #随手写 hostname = www.kkmop.com
     - match: http:\/\/www\.kkmop\.com\/vipMsg1
-      name: "suishouxie_180"
+      name: "suishouxie_192"
       type: response
       require-body: true
       max-size: -1
@@ -940,7 +953,7 @@ http:
 
 #杂志天下 hostname = www.fuyoutech.club
     - match: ^https?:\/\/www\.fuyoutech\.club\/magworld\/member\/status
-      name: "zztx_182"
+      name: "zztx_194"
       type: response
       require-body: true
       max-size: -1
@@ -948,7 +961,7 @@ http:
 
 #建工计算器 hostname = calc.kuaicad.com
     - match: ^https?:\/\/calc\.kuaicad\.com\/authority\/verify_vip
-      name: "jgjsq_184"
+      name: "jgjsq_196"
       type: response
       require-body: true
       max-size: -1
@@ -956,7 +969,7 @@ http:
 
 #Koan-提问日记 hostname = koan.bopulab.cn
     - match: ^https?:\/\/koan\.bopulab\.cn\/(user\/getBriefByUserIdV3|payment\/iosIap\/receipt)
-      name: "koan_186"
+      name: "koan_198"
       type: response
       require-body: true
       max-size: -1
@@ -964,7 +977,7 @@ http:
 
 #一飞记账 hostname = jz.jarstones.com
     - match: ^https?:\/\/jz\.jarstones\.com\/api
-      name: "yifeijizhang_188"
+      name: "yifeijizhang_200"
       type: response
       require-body: true
       max-size: -1
@@ -972,7 +985,7 @@ http:
 
 #恋小语-VIP显示
     - match: ^http:\/\/api\.love\.823123\.com\/facades\/account\.show$
-      name: "lxy_193"
+      name: "lxy_205"
       type: response
       require-body: true
       max-size: -1
@@ -980,13 +993,13 @@ http:
 
 #恋小语-小恋老师，键盘-回复它-开场白
     - match: ^http:\/\/api\.love\.823123\.com\/(facades\/open\.chat_stream|v1\/discovery\/query)
-      name: "lxy_193"
+      name: "lxy_205"
       type: request
       timeout: 60
 
 #Drafts hostname = backend.getdrafts.com
     - match: ^https?:\/\/backend\.getdrafts\.com\/api\/v\d\/verification\/(account_status|verify_receipt)
-      name: "Drafts_197"
+      name: "Drafts_209"
       type: response
       require-body: true
       max-size: -1
@@ -994,7 +1007,7 @@ http:
 
 #17个APP合集， hostname = *api.quthing.com
     - match: ^https:\/\/.*api\.quthing\.com\/(.+\/vip|vip|student|user|appearance|background|rest)
-      name: "yueqi_199"
+      name: "yueqi_211"
       type: response
       require-body: true
       max-size: -1
@@ -1002,7 +1015,7 @@ http:
 
 #Hydra相机 hostname = creaceed.com
     - match: ^https?:\/\/creaceed\.com\/apis\/appstore\/verifyreceipt
-      name: "Hydra_201"
+      name: "Hydra_213"
       type: response
       require-body: true
       max-size: -1
@@ -1010,7 +1023,7 @@ http:
 
 #Scientific_American杂志 hostname = main-sciam-nature.content.pugpig.com
     - match: ^https:\/\/main-sciam-nature\.content\.pugpig\.com\/subs\/(itunes_store|pianomediaoauth_subs)\/verify_subscription
-      name: "sa_203"
+      name: "sa_215"
       type: response
       require-body: true
       max-size: -1
@@ -1018,7 +1031,7 @@ http:
 
 #DayMore-时尚日记本 hostname = *.execute-api.ap-northeast-2.amazonaws.com
     - match: ^https?:\/\/.*\.execute-api\.ap-northeast-2\.amazonaws\.com\/product\/apple\/receipt
-      name: "daymore_205"
+      name: "daymore_217"
       type: response
       require-body: true
       max-size: -1
@@ -1026,7 +1039,7 @@ http:
 
 #Noted录音笔记软件 hostname = subscription-api.notedapp.io
     - match: ^https:\/\/subscription-api\.notedapp\.io\/api\/verifyReceipt
-      name: "Noted_207"
+      name: "Noted_219"
       type: response
       require-body: true
       max-size: -1
@@ -1034,7 +1047,7 @@ http:
 
 #爱涂绘画 hostname = kkr-user.tapque.com
     - match: ^https?:\/\/kkr-user\.tapque\.com\/kkruserapi\/userOrderInfo\/isVip
-      name: "aituhuihua_209"
+      name: "aituhuihua_221"
       type: response
       require-body: true
       max-size: -1
@@ -1042,7 +1055,7 @@ http:
 
 #一起练琴 hostname = api.*lianqin*.*, api.mangofuture.cn
     - match: ^https?:\/\/api\.(.*lianqin.*|mangofuture)\.(com|cn)\/client\/v\d\/(user_vip|my_info)
-      name: "yiqilianqin_211"
+      name: "yiqilianqin_223"
       type: response
       require-body: true
       max-size: -1
@@ -1050,7 +1063,7 @@ http:
 
 #Foodie/轻图/B612相机/甜盐相机 hostname = purchase-*-api.*.com, user-kaji-api.b612kaji.com
     - match: ^https?:\/\/(purchase-.*-api|user-kaji-api)\.(yiruikecorp|b612kaji|tianyancam)\.com\/v\d\/purchase\/subscription\/subscriber\/status
-      name: "4gexj_213"
+      name: "4gexj_225"
       type: response
       require-body: true
       max-size: -1
@@ -1058,7 +1071,7 @@ http:
 
 #13个APP解锁全家桶 hostname = standard.rhinox*.com, appss.rhinox*.com, appss.linhongshi.com
     - match: ^https?:\/\/(appss|standard)\.(rhinox.*|linhongshi)\.com\/.+\/account\/getAccountInfo
-      name: "13geapp_215"
+      name: "13geapp_227"
       type: response
       require-body: true
       max-size: -1
@@ -1066,7 +1079,7 @@ http:
 
 #FT中文网/RainViewer天气预报 hostname = *.cloudfront.net, ftmailbox.cn
     - match: ^https?:\/\/.*\.cloudfront\.net\/(index\.php\/jsapi\/(paywall|get_story_more_info)|mobile\/verify)
-      name: "cloudfront_217"
+      name: "cloudfront_229"
       type: response
       require-body: true
       max-size: -1
@@ -1074,7 +1087,7 @@ http:
 
 #水印宝/闪电水印/熊猫水印/水印全能王 hostname = water*.yunxiaoguo.cn
     - match: ^https?:\/\/water.*\.yunxiaoguo\.cn\/user\/info
-      name: "shuiyin_221"
+      name: "shuiyin_233"
       type: response
       require-body: true
       max-size: -1
@@ -1082,7 +1095,7 @@ http:
 
 #消防行 hostname = www.xfx119.com
     - match: ^https?:\/\/www\.xfx119\.com\/ksVRExamSystem\/validityTerm
-      name: "xiaofangxing_223"
+      name: "xiaofangxing_235"
       type: response
       require-body: true
       max-size: -1
@@ -1090,7 +1103,7 @@ http:
 
 #Vista看天下 hostname = open3.vistastory.com
     - match: ^https?:\/\/open3\.vistastory\.com\/v\d\/api\/(vip|my\/home\/get_home_center|user/pendant|poster\/share_poster|adm\/get_popup_ad|index\/loading_ad)
-      name: "Vista_225"
+      name: "Vista_237"
       type: response
       require-body: true
       max-size: -1
@@ -1098,7 +1111,7 @@ http:
 
 #暴走P图 hostname = api.intelimeditor.com
     - match: ^https?:\/\/api\.intelimeditor\.com\/user\/loginByThirdPlatformApp
-      name: "baozouptu_227"
+      name: "baozouptu_239"
       type: response
       require-body: true
       max-size: -1
@@ -1106,7 +1119,7 @@ http:
 
 #Glass:摄影社区 hostname = glass.photo
     - match: ^https:\/\/glass\.photo\/api\/(v2\/users\/[0-9a-zA-Z-]+$|v1\/account$|v3\/token$)
-      name: "glass_229"
+      name: "glass_241"
       type: response
       require-body: true
       max-size: -1
@@ -1114,7 +1127,7 @@ http:
 
 #MIX-滤镜大师 hostname = cdn-bm.camera360.com
     - match: ^https?:\/\/cdn-bm\.camera360\.com\/api\/(mix\/(getinfo|purchase|recovery)|iap\/check-receipt)
-      name: "mix_231"
+      name: "mix_243"
       type: response
       require-body: true
       max-size: -1
@@ -1122,7 +1135,7 @@ http:
 
 #陆琪讲故事 hostname = www.luqijianggushi.com
     - match: ^https?:\/\/www\.luqijianggushi\.com\/api
-      name: "luqijianggushi_233"
+      name: "luqijianggushi_245"
       type: response
       require-body: true
       max-size: -1
@@ -1130,7 +1143,7 @@ http:
 
 #Slidebox相册清理 hostname = *-slidebox-ios-prod.cloudfunctions.net
     - match: ^https?:\/\/.*-slidebox-ios-prod\.cloudfunctions\.net\/api.+
-      name: "slidebox_235"
+      name: "slidebox_247"
       type: response
       require-body: true
       max-size: -1
@@ -1138,7 +1151,7 @@ http:
 
 #糖果壁纸 hostname = w.5hzs.com
     - match: ^https?:\/\/w\.5hzs\.com\/player\/index
-      name: "tangguo_237"
+      name: "tangguo_249"
       type: response
       require-body: true
       max-size: -1
@@ -1146,7 +1159,7 @@ http:
 
 #话本小说 hostname = *.ihuaben.com
     - match: ^https?:\/\/.*\.ihuaben\.com\/(api\/userinfo|book\/app\/(vipReadWaitSeconds|book)|function\/bookservice\/authorInfo)
-      name: "huabenxiaoshuo_239"
+      name: "huabenxiaoshuo_251"
       type: response
       require-body: true
       max-size: -1
@@ -1154,7 +1167,7 @@ http:
 
 #听书助手 hostname = www.huojiwangluo.cn
     - match: ^https?:\/\/www\.huojiwangluo\.cn\/ting\/user\/.*
-      name: "tingshuzhushou_241"
+      name: "tingshuzhushou_253"
       type: response
       require-body: true
       max-size: -1
@@ -1162,7 +1175,7 @@ http:
 
 #Slopes hostname = my.getslopes.com
     - match: ^https?:\/\/my\.getslopes\.com\/api\/v\d\/account
-      name: "Slopes_243"
+      name: "Slopes_255"
       type: response
       require-body: true
       max-size: -1
@@ -1170,7 +1183,7 @@ http:
 
 #白描 hostname = baimiao.uzero.cn
     - match: ^https?:\/\/baimiao\.uzero\.cn\/api\/.+\/(appLaunchWithUser|getAnnouncement|checkLoginClient)
-      name: "baimiao_245"
+      name: "baimiao_257"
       type: response
       require-body: true
       max-size: -1
@@ -1178,7 +1191,7 @@ http:
 
 #Felo实时翻译 hostname = translator.felo.me
     - match: ^https?:\/\/translator\.felo\.me\/api\/plan\/current
-      name: "Felo_247"
+      name: "Felo_259"
       type: response
       require-body: true
       max-size: -1
@@ -1186,7 +1199,7 @@ http:
 
 #凡音钢琴 hostname = gzfanyin.com
     - match: ^https?:\/\/gzfanyin\.com\/api\/ums\/getMember
-      name: "fanyingangqin_249"
+      name: "fanyingangqin_261"
       type: response
       require-body: true
       max-size: -1
@@ -1194,7 +1207,7 @@ http:
 
 #题库大全-好几百个APP hostname = iosapi.yueshuian.com, question.tiku.cqxcj.top, base.cmoe.top, yyapi.yayingtk.com, learn.cqrry.com, api.sryx.net, api.meigit.com, question.api.anjiazui.com, app.bftk.com.cn, question.civil.shaoeyy.com
     - match: ^https?:\/\/(iosapi\.yueshuian|question\.tiku\.cqxcj|base\.cmoe|yyapi\.yayingtk|learn\.cqrry|api\.sryx|api\.meigit|question\.api\.anjiazui|app\.bftk|question\.civil\.shaoeyy)\.(com|top|net).+(common|front\/customer|vip\/getValidTime)
-      name: "tiku_251"
+      name: "tiku_263"
       type: response
       require-body: true
       max-size: -1
@@ -1202,7 +1215,7 @@ http:
 
 #波点音乐 hostname = bd-api.kuwo.cn
     - match: ^https:\/\/bd-api\.kuwo\.cn\/api\/(ucenter\/users|play\/listening\/user|service\/(home\/index|banner\/myPage|advert\/watch))
-      name: "bodian_253"
+      name: "bodian_265"
       type: response
       require-body: true
       max-size: -1
@@ -1210,20 +1223,20 @@ http:
 
 #智能助手 hostname = www.kaolahome.com, cat-revenuecat-qscqkotbrh.cn-hongkong.fcapp.run
     - match: ^https?:\/\/(www\.kaolahome\.com\/xunnews|cat-revenuecat-qscqkotbrh\.cn-hongkong\.fcapp\.run)\/.+\/(receipts$|subscribers\/?(.*?)*$)
-      name: "zhinengzhushou_255"
+      name: "zhinengzhushou_267"
       type: response
       require-body: true
       max-size: -1
       timeout: 60
 
     - match: ^https?:\/\/(www\.kaolahome\.com\/xunnews|cat-revenuecat-qscqkotbrh\.cn-hongkong\.fcapp\.run)\/.+\/(receipts$|subscribers\/?(.*?)*$)
-      name: "zhinengzhushou_255"
+      name: "zhinengzhushou_267"
       type: request
       timeout: 60
 
 #遥忘/薄荷壁纸 hostname = *.whalean.com
     - match: ^https?:\/\/.*\.whalean\.com\/(poseidon-service\/api\/user|member\/userMemberHomePageV2|hestia-service\/api\/wpUser\/getUserInfo)
-      name: "yaowangbohe_258"
+      name: "yaowangbohe_270"
       type: response
       require-body: true
       max-size: -1
@@ -1231,7 +1244,7 @@ http:
 
 #TenPercent hostname = api.changecollective.com
     - match: ^https:\/\/api\.changecollective\.com\/api\/v\d\/user
-      name: "TenPercent_260"
+      name: "TenPercent_272"
       type: response
       require-body: true
       max-size: -1
@@ -1239,7 +1252,7 @@ http:
 
 #录音专家 hostname = luyintu.cushuikeji.cn
     - match: ^http:\/\/luyintu\.cushuikeji\.cn\/tuv2\.(user\/info|order\/comboDuration|home\/activityAlert)
-      name: "luyinzhuanjia_262"
+      name: "luyinzhuanjia_274"
       type: response
       require-body: true
       max-size: -1
@@ -1247,7 +1260,7 @@ http:
 
 #众山小读书 hostname = umeecorn.com
     - match: ^https:\/\/umeecorn\.com\/notebook\/(loginedUser\/(info|tier|balance)|user\/(login|loginApple))
-      name: "notebook_264"
+      name: "notebook_276"
       type: response
       require-body: true
       max-size: -1
@@ -1255,7 +1268,7 @@ http:
 
 #万年历 hostname = *.jiemengjia.com
     - match: ^https?:\/\/.*\.jiemengjia\.com\/(member\/(member_info|pay_verify_new|create_order)|dialogue\/adspace)
-      name: "wannianli_266"
+      name: "wannianli_278"
       type: response
       require-body: true
       max-size: -1
@@ -1263,7 +1276,7 @@ http:
 
 #Grammarly-移动输入法 hostname = *.grammarly.com
     - match: ^https?:\/\/.*\.grammarly\.com\/(api\/v\d\/subscription|v\d\/user\/oranonymous)
-      name: "Grammarly_268"
+      name: "Grammarly_280"
       type: response
       require-body: true
       max-size: -1
@@ -1271,7 +1284,7 @@ http:
 
 #实时翻译官
     - match: ^http:\/\/new\.xslm333\.xyz\/api\/getUserInfo
-      name: "ssfyg_270"
+      name: "ssfyg_282"
       type: response
       require-body: true
       max-size: -1
@@ -1279,7 +1292,7 @@ http:
 
 #Lento-壁纸 hostname = lentoapp.com
     - match: ^https?:\/\/lentoapp\.com:8081\/getUserMemberShipInfo
-      name: "lento_272"
+      name: "lento_284"
       type: response
       require-body: true
       max-size: -1
@@ -1287,7 +1300,7 @@ http:
 
 #婚礼纪 hostname = *.hunliji.com
     - match: ^https?:\/\/(api|www)\.hunliji\.com
-      name: "hlj_274"
+      name: "hlj_286"
       type: response
       require-body: true
       max-size: -1
@@ -1295,7 +1308,7 @@ http:
 
 #光影边框 hostname = prod.dengziwl.com
     - match: ^https?:\/\/prod\.dengziwl\.com\/light-shadow\/member\/info
-      name: "gybk_276"
+      name: "gybk_288"
       type: response
       require-body: true
       max-size: -1
@@ -1303,7 +1316,7 @@ http:
 
 #大师笔记 hostname = masterwaynote.com
     - match: ^https?:\/\/masterwaynote\.com\/api\.mobile.+\/account\/me
-      name: "dashibiji_278"
+      name: "dashibiji_290"
       type: response
       require-body: true
       max-size: -1
@@ -1311,7 +1324,7 @@ http:
 
 #古文岛 hostname = *.guwendao.net
     - match: ^https?:\/\/.*\.guwendao\.net\/(api\/user\/getVip|router\/user\/getUserInfo)
-      name: "guwendao_280"
+      name: "guwendao_292"
       type: response
       require-body: true
       max-size: -1
@@ -1319,7 +1332,7 @@ http:
 
 #木工宝典 hostname = api-wood.kaying.cc
     - match: ^https?:\/\/api-wood\.kaying\.cc\/rest\/user
-      name: "mgbd_282"
+      name: "mgbd_294"
       type: response
       require-body: true
       max-size: -1
@@ -1327,7 +1340,7 @@ http:
 
 #歌歌AI写歌 hostname = apiv2.somuseai.com
     - match: ^https?:\/\/apiv2\.somuseai\.com\/userinfo
-      name: "aixiege_284"
+      name: "aixiege_296"
       type: response
       require-body: true
       max-size: -1
@@ -1335,7 +1348,7 @@ http:
 
 #Craft-文件笔记编辑器 hostname = api.craft.do
     - match: ^https?:\/\/(api|docs)\.craft\.do\/(api\/)?(auth\/v\d\/profile|subscription\/(receipt|teams\/get-subscriptions))
-      name: "Craft_286"
+      name: "Craft_298"
       type: response
       require-body: true
       max-size: -1
@@ -1343,7 +1356,7 @@ http:
 
 #云上写作 hostname = www.yunshangxiezuo.com
     - match: ^https?:\/\/www\.yunshangxiezuo\.com\/api\/getAuthenticate
-      name: "ysxz_290"
+      name: "ysxz_302"
       type: response
       require-body: true
       max-size: -1
@@ -1351,7 +1364,7 @@ http:
 
 #快递100收件端 hostname = *.kuaidi100.com
     - match: ^https?:\/\/.*\.kuaidi100\.com\/(mkt\/courier\/open|open\/test|advertisement)
-      name: "kuaidi100_292"
+      name: "kuaidi100_304"
       type: response
       require-body: true
       max-size: -1
@@ -1359,7 +1372,7 @@ http:
 
 #周易起名大师 hostname = www.zhouyilive.com
     - match: ^https?:\/\/www\.zhouyilive\.com\/qm-api\/nm_user\.php
-      name: "zyqmds_294"
+      name: "zyqmds_306"
       type: response
       require-body: true
       max-size: -1
@@ -1367,7 +1380,7 @@ http:
 
 #视频&图片编辑套装 hostname = *.vlognow.me
     - match: ^https?:\/\/.*\.vlognow\.me\/.*-pay\/api\/v\d\/(user\/subscriptions|public\/iap\/receipt\/status)
-      name: "Flow_296"
+      name: "Flow_308"
       type: response
       require-body: true
       max-size: -1
@@ -1375,7 +1388,7 @@ http:
 
 #时光序-日程备忘清单 hostname = api.weilaizhushou.com
     - match: ^https:\/\/api\.weilaizhushou\.com\/base\/user\/vip\/getUserVip
-      name: "shiguangxu_298"
+      name: "shiguangxu_310"
       type: response
       require-body: true
       max-size: -1
@@ -1383,7 +1396,7 @@ http:
 
 #OtterLife-健康分析 hostname = otter-api.codefuture.top
     - match: ^https?:\/\/otter-api\.codefuture\.top\/v\d\/user\/current
-      name: "otterlife_300"
+      name: "otterlife_312"
       type: response
       require-body: true
       max-size: -1
@@ -1391,7 +1404,7 @@ http:
 
 #电子合同易签约 hostname = iosdzhtyqy.sanwubeixin.cn
     - match: ^https?:\/\/iosdzhtyqy\.sanwubeixin\.cn\/ct\/user\/info
-      name: "dzhtyqy_302"
+      name: "dzhtyqy_314"
       type: response
       require-body: true
       max-size: -1
@@ -1399,7 +1412,7 @@ http:
 
 #吉真紫微斗数 hostname = zwpp.wzbz123.com
     - match: ^https?:\/\/zwpp\.wzbz123\.com\/api\/.+\/user\/getzwvipinfo
-      name: "jzzwds_304"
+      name: "jzzwds_316"
       type: response
       require-body: true
       max-size: -1
@@ -1407,7 +1420,7 @@ http:
 
 #Lingvist-学习语言 hostname = *.lingvist.com
     - match: ^https:\/\/.*\.lingvist\.com\/.+\/user\/(sync|services)
-      name: "Lingvist_306"
+      name: "Lingvist_318"
       type: response
       require-body: true
       max-size: -1
@@ -1415,7 +1428,7 @@ http:
 
 #高定素材大师/雅俗共赏 hostname = apps-api.lianaishouce.cn, apps-api.lingege.cn
     - match: ^https?:\/\/apps-api\.(lianaishouce|lingege)\.cn\/user\/(public\/login.*|getUserInfo)
-      name: "ysgs_308"
+      name: "ysgs_320"
       type: response
       require-body: true
       max-size: -1
@@ -1423,7 +1436,7 @@ http:
 
 #时间日志 hostname = liujia95.xyz
     - match: ^http:\/\/liujia95\.xyz\/v\d\/user\/(get_user|register)
-      name: "sjrz_310"
+      name: "sjrz_322"
       type: response
       require-body: true
       max-size: -1
@@ -1431,7 +1444,7 @@ http:
 
 #乐拍 hostname = lepai-api.faceqianyan.com
     - match: ^https?:\/\/lepai-api\.faceqianyan\.com\/(apple\/product|account\/profile|faceFusion|toolCollection)
-      name: "lepai_312"
+      name: "lepai_324"
       type: response
       require-body: true
       max-size: -1
@@ -1439,7 +1452,7 @@ http:
 
 #Trancy-翻译APP/Safari浏览器扩展 hostname = api.trancy.org
     - match: ^https?:\/\/api\.trancy\.org\/1\/user\/profile
-      name: "trancy_314"
+      name: "trancy_326"
       type: response
       require-body: true
       max-size: -1
@@ -1447,7 +1460,7 @@ http:
 
 #快速水印 hostname = api-qsy.iiitool.com
     - match: ^https?:\/\/api-qsy\.iiitool\.com\/user\/info
-      name: "kuaisushuiyin_317"
+      name: "kuaisushuiyin_328"
       type: response
       require-body: true
       max-size: -1
@@ -1455,7 +1468,7 @@ http:
 
 #PhotoDance-AI舞蹈视频 hostname = viart-api.afunapp.com
     - match: ^https?:\/\/viart-api\.afunapp\.com\/photodance\/(user_api\/(get_user_info|visitor_login)|order_api\/apple_query)
-      name: "photodance_319"
+      name: "photodance_330"
       type: response
       require-body: true
       max-size: -1
@@ -1463,7 +1476,7 @@ http:
 
 #知了-RSS聚合阅读 hostname = api.ivrfun.com
     - match: ^https?:\/\/api\.ivrfun\.com\/pingx\/v\d\/user\/getInfo
-      name: "zhiliao_321"
+      name: "zhiliao_332"
       type: response
       require-body: true
       max-size: -1
@@ -1471,7 +1484,7 @@ http:
 
 #一木清单 hostname = yimutodo.com
     - match: ^https:\/\/yimutodo\.com\/api\/v\/mtop\/user\/info
-      name: "yimuqingdan_323"
+      name: "yimuqingdan_334"
       type: response
       require-body: true
       max-size: -1
@@ -1479,7 +1492,7 @@ http:
 
 #漫读-电子书阅读器
     - match: ^http:\/\/enjoy_reading_pro\.particlethink\.com:8083\/app\/api\/v\d\/user\/is_vip
-      name: "mandu_325"
+      name: "mandu_336"
       type: response
       require-body: true
       max-size: -1
@@ -1487,7 +1500,7 @@ http:
 
 #地震预警 hostname = mobile-new.chinaeew.cn
     - match: ^https?:\/\/mobile-new\.chinaeew\.cn\/v\d\/order\/apple\/vip
-      name: "dzyj_327"
+      name: "dzyj_338"
       type: response
       require-body: true
       max-size: -1
@@ -1495,7 +1508,7 @@ http:
 
 #小滴课堂 hostname = api-v2.xdclass.net
     - match: ^https:\/\/api-v2\.xdclass\.net\/api\/account\/v\d\/(detail|login)
-      name: "xdkt_329"
+      name: "xdkt_340"
       type: response
       require-body: true
       max-size: -1
@@ -1503,7 +1516,7 @@ http:
 
 #逗逗表情包 hostname = www.dbbqb.com
     - match: ^https?:\/\/www\.dbbqb\.com\/api\/(refresh\/token|login|sms\/register|user\/expire|orderForm)
-      name: "ddbqb_331"
+      name: "ddbqb_342"
       type: response
       require-body: true
       max-size: -1
@@ -1511,7 +1524,7 @@ http:
 
 #阅读记录 hostname = app.yidiansz.com
     - match: ^https?:\/\/app\.yidiansz\.com\/api\/v\d\/(app\/user\/info|banner)
-      name: "yuedujilu_333"
+      name: "yuedujilu_344"
       type: response
       require-body: true
       max-size: -1
@@ -1519,7 +1532,7 @@ http:
 
 #易截图 hostname = 1jietu.com
     - match: ^https?:\/\/1jietu\.com\/apiv2\/(user|ad)
-      name: "yijietu_335"
+      name: "yijietu_346"
       type: response
       require-body: true
       max-size: -1
@@ -1527,7 +1540,7 @@ http:
 
 #Airdroid Cast-无线投屏助手 hostname = *.airdroid.cn
     - match: ^https?:\/\/(pay|id-cast)\.airdroid\.cn\/(cast\/getUserPaymentInfo|user\/getuserinfo)
-      name: "airdroid_337"
+      name: "airdroid_348"
       type: response
       require-body: true
       max-size: -1
@@ -1535,7 +1548,7 @@ http:
 
 #图趣AI hostname = meitu.minecaller.com
     - match: ^https?:\/\/meitu\.minecaller\.com\/api\/users
-      name: "tuqu_341"
+      name: "tuqu_352"
       type: response
       require-body: true
       max-size: -1
@@ -1543,7 +1556,7 @@ http:
 
 #推剧助手 hostname = film-api.startupfun.vip
     - match: ^https?:\/\/film-api\.startupfun\.vip\/api\/v\d\/(wallpaper\/generator|user\/point\/info)
-      name: "tjzs_343"
+      name: "tjzs_354"
       type: response
       require-body: true
       max-size: -1
@@ -1551,7 +1564,7 @@ http:
 
 #秒解析 hostname = tcb-api.tencentcloudapi.com
     - match: ^https?:\/\/tcb-api\.tencentcloudapi\.com\/web
-      name: "miaojiexi_345"
+      name: "miaojiexi_356"
       type: response
       require-body: true
       max-size: -1
@@ -1559,7 +1572,7 @@ http:
 
 #小麦在线-公务员考试 hostname = www.xiaomaigongkao.com
     - match: ^https?:\/\/www\.xiaomaigongkao\.com\/AppApi\/(vip|StartPage\/welcome|Member\/indexHangingWindow|Course\/(curriculum|details))
-      name: "xiaomaizaixian_347"
+      name: "xiaomaizaixian_358"
       type: response
       require-body: true
       max-size: -1
@@ -1567,7 +1580,7 @@ http:
 
 #FaceSwapper-AI换脸 hostname = api-*.facereplacerext.com
     - match: ^https?:\/\/api-.*\.facereplacerext\.com\/api\/rest\/commerce\/integrate\/vip\/perform
-      name: "FaceSwapper_349"
+      name: "FaceSwapper_360"
       type: response
       require-body: true
       max-size: -1
@@ -1575,7 +1588,7 @@ http:
 
 #高考必备
     - match: http:\/\/api\.chuangqi\.store\/
-      name: "gkbb_351"
+      name: "gkbb_362"
       type: response
       require-body: true
       max-size: -1
@@ -1583,7 +1596,7 @@ http:
 
 #小熊壁纸大全
     - match: http:\/\/wallpaper\.jingqueyun\.com\/\/index\.php\/\/(user\/getUserInfo|download)
-      name: "xxbzdq_353"
+      name: "xxbzdq_364"
       type: response
       require-body: true
       max-size: -1
@@ -1591,7 +1604,7 @@ http:
 
 #诗词集韵 hostname = ouyangxunshufa.azurewebsites.net
     - match: ^https?:\/\/ouyangxunshufa\.azurewebsites\.net\/JiyunAPI
-      name: "scjy_355"
+      name: "scjy_366"
       type: response
       require-body: true
       max-size: -1
@@ -1599,7 +1612,7 @@ http:
 
 #Filmix-影视库重命名工具
     - match: ^https?:\/\/appv2\.filmix\.com\.cn\/api\/v\d\/users
-      name: "filmix_357"
+      name: "filmix_368"
       type: response
       require-body: true
       max-size: -1
@@ -1607,7 +1620,7 @@ http:
 
 #一木记账 hostname = yimuapp.com
     - match: ^https?:\/\/yimuapp\.com:8082\/bookkeeping\/user\/getUserInfoById
-      name: "yimujizhang_359"
+      name: "yimujizhang_370"
       type: response
       require-body: true
       max-size: -1
@@ -1615,7 +1628,7 @@ http:
 
 #Perfect365-完美365 hostname = service.perfect365.com
     - match: ^https?:\/\/service\.perfect365\.com\/svr\/perfect365\/services
-      name: "Perfect365_361"
+      name: "Perfect365_372"
       type: response
       require-body: true
       max-size: -1
@@ -1623,7 +1636,7 @@ http:
 
 #Tripsy-旅行规划者 hostname = firstclass.tripsy.app
     - match: ^https?:\/\/firstclass\.tripsy\.app\/api\/v\d\/receipt\/update
-      name: "Tripsy_363"
+      name: "Tripsy_374"
       type: response
       require-body: true
       max-size: -1
@@ -1631,7 +1644,7 @@ http:
 
 #FaceLab-换脸/换发型/时光机 hostname = subscription-api.lyrebirdstudio.net
     - match: ^https?:\/\/subscription-api\.lyrebirdstudio\.net\/subscriptions\/apple\/(verify|status|decode-apple-receipt)
-      name: "FaceLab_365"
+      name: "FaceLab_376"
       type: response
       require-body: true
       max-size: -1
@@ -1639,530 +1652,697 @@ http:
 
 #魔音工坊 hostname = moyin-gateway.moyin.com
     - match: ^https?:\/\/moyin-gateway\.moyin\.com\/moyin-account\/v\d\/vip\/status
-      name: "mygf_367"
+      name: "mygf_378"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+#Nicegram hostname = nicegram.cloud, restore-access.indream.app, api.mbrx.app
+    - match: ^https?:\/\/(nicegram\.cloud\/api\/v\d\/(user\/info|unblock-feature\/get-settings)|restore-access\.indream\.app\/restoreAccess|api\.mbrx\.app\/v\d\/purchase\/ios\/transaction)
+      name: "Nicegram_380"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+#LinearityCurve - 平面设计 hostname = *.linearity.io
+    - match: ^https?:\/\/.*\.linearity\.io\/.+\/(receipts$|subscribers\/?(.*?)*$)
+      name: "LinearityCurve_382"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+    - match: ^https?:\/\/.*\.linearity\.io\/.+\/(receipts$|subscribers\/?(.*?)*$)
+      name: "LinearityCurve_382"
+      type: request
+      timeout: 60
+
+#Mixgram-图片拼接 hostname = *.cloudfunctions.net, *.appsflyersdk.com
+    - match: ^https?:\/\/.+\.cloudfunctions\.net\/validateSubscription
+      name: "Mixgram_385"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+    - match: ^https?:\/\/.+\.appsflyersdk\.com\/api\/v\d\/ios\/validate_subscription
+      name: "Mixgram_385"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+#吉真万年历 hostname = calendarsrv.iwzwh.com
+    - match: ^https?:\/\/calendarsrv\.iwzwh\.com\/api\/.+\/user\/getvipinfo
+      name: "jzwnl_388"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+#问真八字 hostname = bzpp3.iwzbz.com
+    - match: ^https?:\/\/bzpp3\.iwzbz\.com\/api\/.+\/user\/getvipinfo
+      name: "wenzhenbazi_390"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+#Context - 基于语境学英语AI工具 hostname = rc.visionarytech.ltd
+    - match: ^https?:\/\/rc\.visionarytech\.ltd\/.+\/(receipts$|subscribers\/?(.*?)*$)
+      name: "Context_392"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+    - match: ^https?:\/\/rc\.visionarytech\.ltd\/.+\/(receipts$|subscribers\/?(.*?)*$)
+      name: "Context_392"
+      type: request
+      timeout: 60
+
+#智能抢答器 hostname = qdq.9sm.net
+    - match: ^https?:\/\/qdq\.9sm\.net\/api\/userInfo\/getUserInfo
+      name: "znqdq_395"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+#Noted - 录音备忘录 hostname = *-api.notedapp.io
+    - match: ^https?:\/\/(functions|subscription)-api\.notedapp\.io\/(v\d\/purchases\/\d+|api\/verifyReceipt)
+      name: "Noted_219"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+#IFTTT-工作流程和智能家居自动化 hostname = ifttt.com
+    - match: ^https?:\/\/ifttt\.com\/api\/v\d\/graph
+      name: "IFTTT_401"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+#ARTGO 个性水印
+    - match: http:\/\/api\.artgo\.ltd
+      name: "artgo_403"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+#视氪地图
+    - match: http:\/\/39\.101\.171\.199:8080\/(liteKrnaviDownloadUserData|liteKrnaviCheckToken)
+      name: "litekrnavi_405"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+#亲戚计算器
+    - match: http:\/\/chenghu\.kuaixuanwo\.com\/user\/info
+      name: "qqjsq_407"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+#Everyday-习惯养成 hostname = api.everyday.app
+    - match: ^https?:\/\/api\.everyday\.app\/(users|makeIosSubscription)
+      name: "Everyday_409"
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+
+#使命时钟 hostname = api.alar.my
+    - match: ^https?:\/\/api\.alar\.my\/v\d\/subscription\/sync
+      name: "shimingshizhong_411"
       type: response
       require-body: true
       max-size: -1
       timeout: 60
 
 script-providers:
-  "Reheji_1":
+  "Reheji_13":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js
     interval: 86400
-  "iTunes_4":
+  "iTunes_16":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js
     interval: 86400
-  "bending_6":
+  "bending_18":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/bending.js
     interval: 86400
-  "adapty_8":
+  "adapty_20":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/adapty.js
     interval: 86400
-  "qonversion_10":
+  "qonversion_22":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/qonversion.js
     interval: 86400
-  "apphud_12":
+  "apphud_24":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/apphud.js
     interval: 86400
-  "snow_14":
+  "snow_26":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/snow.js
     interval: 86400
-  "hyzm_16":
+  "hyzm_28":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/hyzm.js
     interval: 86400
-  "soutu_18":
+  "soutu_30":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/soutu.js
     interval: 86400
-  "caiyuntianqi_20":
+  "caiyuntianqi_32":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/caiyuntianqi.js
     interval: 86400
-  "yiyan_26":
+  "yiyan_38":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/yiyan.js
     interval: 86400
-  "wsgj_28":
+  "wsgj_40":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/wsgj.js
     interval: 86400
-  "embycrack_30":
+  "embycrack_42":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/embycrack.js
     interval: 86400
-  "CamScanner_32":
+  "CamScanner_44":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/CamScanner.js
     interval: 86400
-  "bdcloud_34":
+  "bdcloud_46":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/bdcloud.js
     interval: 86400
-  "picsart_36":
+  "picsart_48":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/picsart.js
     interval: 86400
-  "qifu_38":
+  "qifu_50":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/qifu.js
     interval: 86400
-  "bdsp_40":
+  "bdsp_52":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/bdsp.js
     interval: 86400
-  "Wall_42":
+  "Wall_54":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Wall.js
     interval: 86400
-  "duitang_44":
+  "duitang_56":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/duitang.js
     interval: 86400
-  "boom_46":
+  "boom_58":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/boom.js
     interval: 86400
-  "arqjt_48":
+  "arqjt_60":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/arqjt.js
     interval: 86400
-  "Agenda_50":
+  "Agenda_62":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Agenda.js
     interval: 86400
-  "yunting_52":
+  "yunting_64":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/yunting.js
     interval: 86400
-  "Cb_54":
+  "Cb_66":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Cb.js
     interval: 86400
-  "xzjhz_56":
+  "xzjhz_68":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/xzjhz.js
     interval: 86400
-  "gszh_58":
+  "gszh_70":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/gszh.js
     interval: 86400
-  "zhfqjt_60":
+  "zhfqjt_72":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/zhfqjt.js
     interval: 86400
-  "rq_62":
+  "rq_74":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/rq.js
     interval: 86400
-  "ilove_64":
+  "ilove_76":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/ilove.js
     interval: 86400
-  "vn_66":
+  "vn_78":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/vn.js
     interval: 86400
-  "lgxj_68":
+  "lgxj_80":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/lgxj.js
     interval: 86400
-  "jjsm_70":
+  "jjsm_82":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/jjsm.js
     interval: 86400
-  "zpqlds_72":
+  "zpqlds_84":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/zpqlds.js
     interval: 86400
-  "mtywj_74":
+  "mtywj_86":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/mtywj.js
     interval: 86400
-  "ajj_76":
+  "ajj_88":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/ajj.js
     interval: 86400
-  "Collart_78":
+  "Collart_90":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Collart.js
     interval: 86400
-  "jijianhuilv_80":
+  "jijianhuilv_92":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/jijianhuilv.js
     interval: 86400
-  "AdGuard_82":
+  "AdGuard_94":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/AdGuard.js
     interval: 86400
-  "fanshuxiaoshuo_84":
+  "fanshuxiaoshuo_96":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/fanshuxiaoshuo.js
     interval: 86400
-  "ydjl_86":
+  "ydjl_98":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/ydjl.js
     interval: 86400
-  "myxj_88":
+  "myxj_100":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/myxj.js
     interval: 86400
-  "mtxl_90":
+  "mtxl_102":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/mtxl.js
     interval: 86400
-  "mtxx_92":
+  "mtxx_104":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/mtxx.js
     interval: 86400
-  "fimo_94":
+  "fimo_106":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/fimo.js
     interval: 86400
-  "xxg_96":
+  "xxg_108":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/xxg.js
     interval: 86400
-  "mate_98":
+  "mate_110":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/mate.js
     interval: 86400
-  "dejianxiaoshuo_100":
+  "dejianxiaoshuo_112":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/dejianxiaoshuo.js
     interval: 86400
-  "dsjnr_102":
+  "dsjnr_114":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/dsjnr.js
     interval: 86400
-  "qnsj_104":
+  "qnsj_116":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/qnsj.js
     interval: 86400
-  "peiyinxiu_106":
+  "peiyinxiu_118":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/peiyinxiu.js
     interval: 86400
-  "xiaoshishang_108":
+  "xiaoshishang_120":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/xiaoshishang.js
     interval: 86400
-  "40sishi_110":
+  "40sishi_122":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/40sishi.js
     interval: 86400
-  "bohejiankang_112":
+  "bohejiankang_124":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/bohejiankang.js
     interval: 86400
-  "caipu_114":
+  "caipu_126":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/caipu.js
     interval: 86400
-  "paibanrili_116":
+  "paibanrili_128":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/paibanrili.js
     interval: 86400
-  "wacaijizhang_118":
+  "wacaijizhang_130":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/wacaijizhang.js
     interval: 86400
-  "yeguoyuedu_120":
+  "yeguoyuedu_132":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/yeguoyuedu.js
     interval: 86400
-  "woniushuimian_122":
+  "woniushuimian_134":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/woniushuimian.js
     interval: 86400
-  "wywnds_124":
+  "wywnds_136":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/wywnds.js
     interval: 86400
-  "DailyArt_126":
+  "DailyArt_138":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/DailyArt.js
     interval: 86400
-  "VideoShow_128":
+  "VideoShow_140":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/VideoShow.js
     interval: 86400
-  "itranslate_130":
+  "itranslate_142":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/itranslate.js
     interval: 86400
-  "yonekura_132":
+  "yonekura_144":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/yonekura.js
     interval: 86400
-  "calendars_134":
+  "calendars_146":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/calendars.js
     interval: 86400
-  "WPS_136":
+  "WPS_148":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/WPS.js
     interval: 86400
-  "mojitianqi_138":
+  "mojitianqi_150":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/mojitianqi.js
     interval: 86400
-  "Pixelup_142":
+  "Pixelup_154":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Pixelup.js
     interval: 86400
-  "iscreenfz_144":
+  "iscreenfz_156":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/iscreenfz.js
     interval: 86400
-  "ltsst_148":
+  "ltsst_160":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/ltsst.js
     interval: 86400
-  "wenzhenpaipan_150":
+  "wenzhenpaipan_162":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/wenzhenpaipan.js
     interval: 86400
-  "jjxrsl_152":
+  "jjxrsl_164":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/jjxrsl.js
     interval: 86400
-  "lofo_154":
+  "lofo_166":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/lofo.js
     interval: 86400
-  "Hyperweb_156":
+  "Hyperweb_168":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Hyperweb.js
     interval: 86400
-  "TimeTree_158":
+  "TimeTree_170":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/TimeTree.js
     interval: 86400
-  "youpume_160":
+  "youpume_172":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/youpume.js
     interval: 86400
-  "Endel_162":
+  "Endel_174":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Endel.js
     interval: 86400
-  "rljq_164":
+  "rljq_176":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/rljq.js
     interval: 86400
-  "gezhi_166":
+  "gezhi_178":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/gezhi.js
     interval: 86400
-  "pola_168":
+  "pola_180":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/pola.js
     interval: 86400
-  "renrenshipin_170":
+  "renrenshipin_182":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/renrenshipin.js
     interval: 86400
-  "xinzang_172":
+  "xinzang_184":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/xinzang.js
     interval: 86400
-  "360xj_174":
+  "360xj_186":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/360xj.js
     interval: 86400
-  "yijiankoutu_176":
+  "yijiankoutu_188":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/yijiankoutu.js
     interval: 86400
-  "changwan_178":
+  "changwan_190":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/changwan.js
     interval: 86400
-  "suishouxie_180":
+  "suishouxie_192":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/suishouxie.js
     interval: 86400
-  "zztx_182":
+  "zztx_194":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/zztx.js
     interval: 86400
-  "jgjsq_184":
+  "jgjsq_196":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/jgjsq.js
     interval: 86400
-  "koan_186":
+  "koan_198":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/koan.js
     interval: 86400
-  "yifeijizhang_188":
+  "yifeijizhang_200":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/yifeijizhang.js
     interval: 86400
-  "lxy_193":
+  "lxy_205":
     url: https://raw.githubusercontent.com/wf021325/qx/master/js/lxy.js
     interval: 86400
-  "Drafts_197":
+  "Drafts_209":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Drafts.js
     interval: 86400
-  "yueqi_199":
+  "yueqi_211":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/yueqi.js
     interval: 86400
-  "Hydra_201":
+  "Hydra_213":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Hydra.js
     interval: 86400
-  "sa_203":
+  "sa_215":
     url: https://raw.githubusercontent.com/leey668/pyer/main/sa.js
     interval: 86400
-  "daymore_205":
+  "daymore_217":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/daymore.js
     interval: 86400
-  "Noted_207":
+  "Noted_219":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Noted.js
     interval: 86400
-  "aituhuihua_209":
+  "aituhuihua_221":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/aituhuihua.js
     interval: 86400
-  "yiqilianqin_211":
+  "yiqilianqin_223":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/yiqilianqin.js
     interval: 86400
-  "4gexj_213":
+  "4gexj_225":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/4gexj.js
     interval: 86400
-  "13geapp_215":
+  "13geapp_227":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/13geapp.js
     interval: 86400
-  "cloudfront_217":
+  "cloudfront_229":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/cloudfront.js
     interval: 86400
-  "shuiyin_221":
+  "shuiyin_233":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/shuiyin.js
     interval: 86400
-  "xiaofangxing_223":
+  "xiaofangxing_235":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/xiaofangxing.js
     interval: 86400
-  "Vista_225":
+  "Vista_237":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Vista.js
     interval: 86400
-  "baozouptu_227":
+  "baozouptu_239":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/baozouptu.js
     interval: 86400
-  "glass_229":
+  "glass_241":
     url: https://raw.githubusercontent.com/leey668/pyer/main/glass.js
     interval: 86400
-  "mix_231":
+  "mix_243":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/mix.js
     interval: 86400
-  "luqijianggushi_233":
+  "luqijianggushi_245":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/luqijianggushi.js
     interval: 86400
-  "slidebox_235":
+  "slidebox_247":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/slidebox.js
     interval: 86400
-  "tangguo_237":
+  "tangguo_249":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/tangguo.js
     interval: 86400
-  "huabenxiaoshuo_239":
+  "huabenxiaoshuo_251":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/huabenxiaoshuo.js
     interval: 86400
-  "tingshuzhushou_241":
+  "tingshuzhushou_253":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/tingshuzhushou.js
     interval: 86400
-  "Slopes_243":
+  "Slopes_255":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Slopes.js
     interval: 86400
-  "baimiao_245":
+  "baimiao_257":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/baimiao.js
     interval: 86400
-  "Felo_247":
+  "Felo_259":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Felo.js
     interval: 86400
-  "fanyingangqin_249":
+  "fanyingangqin_261":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/fanyingangqin.js
     interval: 86400
-  "tiku_251":
+  "tiku_263":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/tiku.js
     interval: 86400
-  "bodian_253":
+  "bodian_265":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/bodian.js
     interval: 86400
-  "zhinengzhushou_255":
+  "zhinengzhushou_267":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/zhinengzhushou.js
     interval: 86400
-  "yaowangbohe_258":
+  "yaowangbohe_270":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/yaowangbohe.js
     interval: 86400
-  "TenPercent_260":
+  "TenPercent_272":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/TenPercent.js
     interval: 86400
-  "luyinzhuanjia_262":
+  "luyinzhuanjia_274":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/luyinzhuanjia.js
     interval: 86400
-  "notebook_264":
+  "notebook_276":
     url: https://raw.githubusercontent.com/leey668/pyer/main/notebook.js
     interval: 86400
-  "wannianli_266":
+  "wannianli_278":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/wannianli.js
     interval: 86400
-  "Grammarly_268":
+  "Grammarly_280":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Grammarly.js
     interval: 86400
-  "ssfyg_270":
+  "ssfyg_282":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/ssfyg.js
     interval: 86400
-  "lento_272":
+  "lento_284":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/lento.js
     interval: 86400
-  "hlj_274":
+  "hlj_286":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/hlj.js
     interval: 86400
-  "gybk_276":
+  "gybk_288":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/gybk.js
     interval: 86400
-  "dashibiji_278":
+  "dashibiji_290":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/dashibiji.js
     interval: 86400
-  "guwendao_280":
+  "guwendao_292":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/guwendao.js
     interval: 86400
-  "mgbd_282":
+  "mgbd_294":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/mgbd.js
     interval: 86400
-  "aixiege_284":
+  "aixiege_296":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/aixiege.js
     interval: 86400
-  "Craft_286":
+  "Craft_298":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Craft.js
     interval: 86400
-  "ysxz_290":
+  "ysxz_302":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/ysxz.js
     interval: 86400
-  "kuaidi100_292":
+  "kuaidi100_304":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/kuaidi100.js
     interval: 86400
-  "zyqmds_294":
+  "zyqmds_306":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/zyqmds.js
     interval: 86400
-  "Flow_296":
+  "Flow_308":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Flow.js
     interval: 86400
-  "shiguangxu_298":
+  "shiguangxu_310":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/shiguangxu.js
     interval: 86400
-  "otterlife_300":
+  "otterlife_312":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/otterlife.js
     interval: 86400
-  "dzhtyqy_302":
+  "dzhtyqy_314":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/dzhtyqy.js
     interval: 86400
-  "jzzwds_304":
+  "jzzwds_316":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/jzzwds.js
     interval: 86400
-  "Lingvist_306":
+  "Lingvist_318":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Lingvist.js
     interval: 86400
-  "ysgs_308":
+  "ysgs_320":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/ysgs.js
     interval: 86400
-  "sjrz_310":
+  "sjrz_322":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/sjrz.js
     interval: 86400
-  "lepai_312":
+  "lepai_324":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/lepai.js
     interval: 86400
-  "trancy_314":
+  "trancy_326":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/trancy.js
     interval: 86400
-  "kuaisushuiyin_317":
+  "kuaisushuiyin_328":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/kuaisushuiyin.js
     interval: 86400
-  "photodance_319":
+  "photodance_330":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/photodance.js
     interval: 86400
-  "zhiliao_321":
+  "zhiliao_332":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/zhiliao.js
     interval: 86400
-  "yimuqingdan_323":
+  "yimuqingdan_334":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/yimuqingdan.js
     interval: 86400
-  "mandu_325":
+  "mandu_336":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/mandu.js
     interval: 86400
-  "dzyj_327":
+  "dzyj_338":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/dzyj.js
     interval: 86400
-  "xdkt_329":
+  "xdkt_340":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/xdkt.js
     interval: 86400
-  "ddbqb_331":
+  "ddbqb_342":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/ddbqb.js
     interval: 86400
-  "yuedujilu_333":
+  "yuedujilu_344":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/yuedujilu.js
     interval: 86400
-  "yijietu_335":
+  "yijietu_346":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/yijietu.js
     interval: 86400
-  "airdroid_337":
+  "airdroid_348":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/airdroid.js
     interval: 86400
-  "tuqu_341":
+  "tuqu_352":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/tuqu.js
     interval: 86400
-  "tjzs_343":
+  "tjzs_354":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/tjzs.js
     interval: 86400
-  "miaojiexi_345":
+  "miaojiexi_356":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/miaojiexi.js
     interval: 86400
-  "xiaomaizaixian_347":
+  "xiaomaizaixian_358":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/xiaomaizaixian.js
     interval: 86400
-  "FaceSwapper_349":
+  "FaceSwapper_360":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/FaceSwapper.js
     interval: 86400
-  "gkbb_351":
+  "gkbb_362":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/gkbb.js
     interval: 86400
-  "xxbzdq_353":
+  "xxbzdq_364":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/xxbzdq.js
     interval: 86400
-  "scjy_355":
+  "scjy_366":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/scjy.js
     interval: 86400
-  "filmix_357":
+  "filmix_368":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/filmix.js
     interval: 86400
-  "yimujizhang_359":
+  "yimujizhang_370":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/yimujizhang.js
     interval: 86400
-  "Perfect365_361":
+  "Perfect365_372":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Perfect365.js
     interval: 86400
-  "Tripsy_363":
+  "Tripsy_374":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Tripsy.js
     interval: 86400
-  "FaceLab_365":
+  "FaceLab_376":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/FaceLab.js
     interval: 86400
-  "mygf_367":
+  "mygf_378":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/mygf.js
     interval: 86400
-
+  "Nicegram_380":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Nicegram.js
+    interval: 86400
+  "LinearityCurve_382":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/LinearityCurve.js
+    interval: 86400
+  "Mixgram_385":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Mixgram.js
+    interval: 86400
+  "jzwnl_388":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/jzwnl.js
+    interval: 86400
+  "wenzhenbazi_390":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/wenzhenbazi.js
+    interval: 86400
+  "Context_392":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Context.js
+    interval: 86400
+  "znqdq_395":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/znqdq.js
+    interval: 86400
+  "IFTTT_401":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/IFTTT.js
+    interval: 86400
+  "artgo_403":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/artgo.js
+    interval: 86400
+  "litekrnavi_405":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/litekrnavi.js
+    interval: 86400
+  "qqjsq_407":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/qqjsq.js
+    interval: 86400
+  "Everyday_409":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Everyday.js
+    interval: 86400
+  "shimingshizhong_411":
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/shimingshizhong.js
+    interval: 86400
