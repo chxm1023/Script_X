@@ -24,17 +24,17 @@
 ^http:\/\api\.love\.823123\.com\/facades\/ad_space\.index - reject-200
 #去除FT中文网AD
 ^https?:\/\/ftmailbox\.cn\/ad_impression - reject-200
-
-
+# 英语演讲-会员验证
+^https?:\/\/speechenglish\.cn\/apple\/(order|usercoupon) - reject
 
 [Script]
 #Revenuecat-系列 hostname = api.revenuecat.com, api.rc-backup.com
-Reheji = type=http-response, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, requires-body=true, max-size=-1, timeout=60
+Reheji = type=http-response, engine=webview, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, requires-body=true, max-size=-1, timeout=60
 
 Reheji = type=http-request, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, timeout=60
 
 #iTunes-系列 hostname = buy.itunes.apple.com
-iTunes = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js, requires-body=true, max-size=-1, timeout=60
+iTunes = type=http-response, engine=webview, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js, requires-body=true, max-size=-1, timeout=60
 
 #Bending-系列 hostname = *.oracle.bendingspoonsapps.com
 bending = type=http-response, pattern=^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/bending.js, requires-body=true, max-size=-1, timeout=60
