@@ -208,6 +208,7 @@ http:
     - "api.qonversion.io"
     - "api.adapty.io"
     - "*.oracle.bendingspoonsapps.com"
+    - "speechenglish.cn"
     - "buy.itunes.apple.com"
     - "api.rc-backup.com"
     - "api.revenuecat.com"
@@ -225,24 +226,27 @@ http:
 #去除FT中文网AD
     - >-
       ^https?:\/\/ftmailbox\.cn\/ad_impression - reject-200
+# 英语演讲-会员验证
+    - >-
+      ^https?:\/\/speechenglish\.cn\/apple\/(order|usercoupon) - reject
 
   script:
 #Revenuecat-系列 hostname = api.revenuecat.com, api.rc-backup.com
     - match: ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$)
-      name: "Reheji_13"
+      name: "Revenuecat"
       type: response
       require-body: true
       max-size: -1
       timeout: 60
 
     - match: ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$)
-      name: "Reheji_13"
+      name: "Revenuecat"
       type: request
       timeout: 60
 
 #iTunes-系列 hostname = buy.itunes.apple.com
     - match: ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$
-      name: "iTunes_16"
+      name: "iTunes"
       type: response
       require-body: true
       max-size: -1
@@ -1771,10 +1775,10 @@ http:
       timeout: 60
 
 script-providers:
-  "Reheji_13":
+  "Revenuecat":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js
     interval: 86400
-  "iTunes_16":
+  "iTunes":
     url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js
     interval: 86400
   "bending_18":
