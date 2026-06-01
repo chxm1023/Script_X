@@ -163,9 +163,6 @@ http:
     - "asia.gikken.co"
     - "xianbeikeji.com"
     - "fimo.appfimo.com"
-    - "*.xiuxiu.meitu.com"
-    - "api.posters.meitu.com"
-    - "api-*.meitu.com"
     - "*.meiyan.com"
     - "ggs.manmeng168.com"
     - "mobile-api.adguard.org"
@@ -581,22 +578,6 @@ http:
 #美颜相机 hostname = *.meiyan.com
     - match: ^https?:\/\/(api|community)\.meiyan\.com\/(vip|v\d)\/(user_center|user_info|user\/(.*?))
       name: "myxj_100"
-      type: response
-      require-body: true
-      max-size: -1
-      timeout: 60
-
-#Wink，蛋啵，潮自拍，海报工厂，Chic hostname = api-*.meitu.com
-    - match: ^https?:\/\/api-.*\.meitu\.com\/(.+\/user\/vip_info|user\/show)
-      name: "mtxl_102"
-      type: response
-      require-body: true
-      max-size: -1
-      timeout: 60
-
-#美图秀秀 hostname = *.xiuxiu.meitu.com, api.posters.meitu.com, api-*.meitu.com
-    - match: ^https?:\/\/((h5|api)\.xiuxiu|api-sub|api\.posters)\.meitu\.com\/.+\/(vip|user|h\d|center|home)
-      name: "mtxx_104"
       type: response
       require-body: true
       max-size: -1
