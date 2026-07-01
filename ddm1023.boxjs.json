@@ -45,7 +45,7 @@
             "id": "ddm.zyyad.registerday",
             "name": "注册天数",
             "type": "number",
-            "val": "5",
+            "val": "7",
             "desc": "注册时间不足该天数时自动修改，同时同步连续登录天数。"
         }, {
             "id": "ddm.zyyad.customlevel",
