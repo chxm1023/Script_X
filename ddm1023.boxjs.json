@@ -26,6 +26,65 @@
                 "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm.png"
             ],
             "script": ""
+        },
+        {
+          "id": "ddm.zyyad",
+          "name": "赵云与阿斗辅助工具",
+          "icons": [
+            "gamecontroller.fill"
+          ],
+          "keys": [
+            {
+              "id": "ddm.zyyad.gold",
+              "name": "修改金币数量",
+              "type": "number",
+              "val": "9999999"
+            },
+            {
+              "id": "ddm.zyyad.registerday",
+              "name": "修改注册天数",
+              "type": "number",
+              "val": "5"
+            },
+            {
+              "id": "ddm.zyyad.customlevel",
+              "name": "修改等级开关",
+              "type": "boolean",
+              "val": true
+            },
+            {
+              "id": "ddm.zyyad.level",
+              "name": "设置等级级数",
+              "type": "number",
+              "val": "999"
+            },
+            {
+              "id": "ddm.zyyad.weaponmode",
+              "name": "武器模式",
+              "type": "select",
+              "items": [
+                {
+                  "key": "关闭导入碎片",
+                  "value": "0"
+                },
+                {
+                  "key": "自动补充碎片",
+                  "value": "1"
+                },
+                {
+                  "key": "导入全部武器",
+                  "value": "2"
+                }
+              ],
+              "val": "2"
+            },
+            {
+              "id": "ddm.zyyad.weaponcount",
+              "name": "添加碎片数量",
+              "type": "number",
+              "val": "50"
+            }
+          ]
         }
     ]
 }
