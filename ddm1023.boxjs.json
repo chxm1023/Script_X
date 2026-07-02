@@ -1,93 +1,133 @@
 {
-    "id": "ddm.app.sub",
-    "name": "叮当猫脚本订阅",
-    "author": "@ddm1023",
-    "icon": "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm.png",
-    "repo": "https://t.me/ddm1023",
-    "apps": [{
-        "id": "ddm.app.sub",
-        "name": "叮当猫脚本开关",
-        "desc_html": "<p><font class=\"error--text\">脚本控制开关</font><br>本频道的脚本为免费使用，请勿私自售卖！<br>我们未在任何平台开设商铺出售脚本，请勿轻信他人。<br>所有脚本仅供测试与体验之用，测试结束后请及时删除。<br>欢迎关注频道 <a href=\"https://t.me/ddm1023\">叮当猫脚本分享频道 @ddm1023</a></p>",
-        "keys": ["ddm.app_switch"],
-        "settings": [{
-            "id": "ddm.app_switch",
-            "name": "脚本开关",
-            "val": "false",
-            "type": "boolean",
-            "desc": "打开：true/关闭：false"
-        }],
-        "author": "@ddm1023",
-        "repo": "",
-        "icons": [
-            "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm.png",
-            "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm.png"
-        ],
-        "script": ""
-    }, {
-        "id": "ddm.zyyad",
-        "name": "赵云与阿斗辅助工具",
-        "desc_html": "<p><font class=\"info--text\">赵云与阿斗小游戏辅助配置</font><br>支持金币、注册天数、等级、武器碎片等功能自定义。<br>修改配置后重新进入游戏即可生效。</p>",
-        "keys": [
-            "ddm.zyyad.gold",
-            "ddm.zyyad.registerday",
-            "ddm.zyyad.customlevel",
-            "ddm.zyyad.level",
-            "ddm.zyyad.weaponmode",
-            "ddm.zyyad.weaponcount"
-        ],
-        "settings": [{
-            "id": "ddm.zyyad.gold",
-            "name": "金币数量",
-            "type": "number",
-            "val": "9999999",
-            "desc": "金币低于该数值时自动补充。"
-        }, {
-            "id": "ddm.zyyad.registerday",
-            "name": "注册天数",
-            "type": "number",
-            "val": "7",
-            "desc": "注册时间不足该天数时自动修改，同时同步连续登录天数。"
-        }, {
-            "id": "ddm.zyyad.customlevel",
-            "name": "修改等级",
-            "type": "boolean",
-            "val": "true",
-            "desc": "开启后自动修改角色等级。"
-        }, {
-            "id": "ddm.zyyad.level",
-            "name": "角色等级",
-            "type": "number",
-            "val": "999",
-            "desc": "角色等级低于该数值时自动补充。"
-        }, {
-            "id": "ddm.zyyad.weaponmode",
-            "name": "武器碎片模式",
-            "type": "select",
-            "items": [{
-                "key": "关闭",
-                "value": "0"
-            }, {
-                "key": "自动补充已有碎片",
-                "value": "1"
-            }, {
-                "key": "导入全部武器碎片",
-                "value": "2"
-            }],
-            "val": "2",
-            "desc": "选择武器碎片处理模式。"
-        }, {
-            "id": "ddm.zyyad.weaponcount",
-            "name": "自动补充碎片数量",
-            "type": "number",
-            "val": "50",
-            "desc": "仅在【自动补充已有碎片】模式下生效。"
-        }],
-        "author": "@ddm1023",
-        "repo": "https://t.me/ddm1023",
-        "icons": [
-            "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm.png",
-            "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm.png"
-        ],
-        "script": ""
-    }]
+  "id": "ddm.app.sub",
+  "name": "叮当猫脚本订阅",
+  "author": "@ddm1023",
+  "icon": "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm.png",
+  "repo": "https://t.me/ddm1023",
+  "apps": [
+    {
+      "id": "ddm.app.sub",
+      "name": "叮当猫脚本开关",
+      "desc_html": "<p><font class=\"error--text\">脚本控制开关</font><br>本频道脚本免费使用，请勿私自售卖。<br>所有脚本仅供测试与学习使用。<br><a href=\"https://t.me/ddm1023\">@ddm1023</a></p>",
+      "keys": [
+        "ddm.app_switch"
+      ],
+      "settings": [
+        {
+          "id": "ddm.app_switch",
+          "name": "脚本总开关",
+          "val": false,
+          "type": "boolean",
+          "desc": "true = 开启 / false = 关闭"
+        }
+      ],
+      "author": "@ddm1023",
+      "repo": "",
+      "icons": [
+        "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm.png"
+      ]
+    },
+    {
+      "id": "ddm.zyyad",
+      "name": "赵云与阿斗",
+      "author": "@ddm1023",
+      "repo": "https://github.com/chxm1023/Rewrite",
+      "icons": [
+        "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm.png"
+      ],
+      "keys": [
+        "ddm.zyyad.forcevalue",
+        "ddm.zyyad.enablegold",
+        "ddm.zyyad.gold",
+        "ddm.zyyad.enablelevel",
+        "ddm.zyyad.level",
+        "ddm.zyyad.enableregister",
+        "ddm.zyyad.registerday",
+        "ddm.zyyad.enableweapon",
+        "ddm.zyyad.weaponmode",
+        "ddm.zyyad.weaponcount",
+        "ddm.zyyad.enableskill",
+        "ddm.zyyad.enableavatar"
+      ],
+      "settings": [
+        {
+          "id": "ddm.zyyad.forcevalue",
+          "name": "强制覆盖（开启=全部按配置）",
+          "type": "boolean",
+          "val": false
+        },
+        {
+          "id": "ddm.zyyad.enablegold",
+          "name": "金币模块",
+          "type": "boolean",
+          "val": true
+        },
+        {
+          "id": "ddm.zyyad.gold",
+          "name": "金币数量",
+          "type": "number",
+          "val": 9999999
+        },
+        {
+          "id": "ddm.zyyad.enablelevel",
+          "name": "等级模块",
+          "type": "boolean",
+          "val": true
+        },
+        {
+          "id": "ddm.zyyad.level",
+          "name": "等级数值",
+          "type": "number",
+          "val": 999
+        },
+        {
+          "id": "ddm.zyyad.enableregister",
+          "name": "注册时间模块",
+          "type": "boolean",
+          "val": true
+        },
+        {
+          "id": "ddm.zyyad.registerday",
+          "name": "注册天数",
+          "type": "number",
+          "val": 7
+        },
+        {
+          "id": "ddm.zyyad.enableweapon",
+          "name": "武器模块",
+          "type": "boolean",
+          "val": true
+        },
+        {
+          "id": "ddm.zyyad.weaponmode",
+          "name": "武器模式",
+          "type": "select",
+          "val": "2",
+          "items": [
+            { "key": "关闭", "value": "0" },
+            { "key": "补充已有", "value": "1" },
+            { "key": "导入全部", "value": "2" }
+          ]
+        },
+        {
+          "id": "ddm.zyyad.weaponcount",
+          "name": "武器碎片数量",
+          "type": "number",
+          "val": 50
+        },
+        {
+          "id": "ddm.zyyad.enableskill",
+          "name": "技能模块",
+          "type": "boolean",
+          "val": true
+        },
+        {
+          "id": "ddm.zyyad.enableavatar",
+          "name": "头像模块",
+          "type": "boolean",
+          "val": true
+        }
+      ]
+    }
+  ]
 }
