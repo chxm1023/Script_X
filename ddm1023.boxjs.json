@@ -54,7 +54,8 @@
           "id": "ddm.zyyad.forcevalue",
           "name": "强制覆盖（开启=全部按配置）",
           "type": "boolean",
-          "val": false
+          "val": false,
+          "desc": "强制使用配置按配置方案调整"
         },
         {
           "id": "ddm.zyyad.enablegold",
@@ -66,7 +67,8 @@
           "id": "ddm.zyyad.gold",
           "name": "金币数量",
           "type": "number",
-          "val": 9999999
+          "val": 9999999,
+          "desc": "调整金币数量"
         },
         {
           "id": "ddm.zyyad.enablelevel",
@@ -78,7 +80,8 @@
           "id": "ddm.zyyad.level",
           "name": "等级数值",
           "type": "number",
-          "val": 999
+          "val": 999,
+          "desc": "调整等级级数"
         },
         {
           "id": "ddm.zyyad.enableregister",
@@ -90,7 +93,8 @@
           "id": "ddm.zyyad.registerday",
           "name": "注册天数",
           "type": "number",
-          "val": 7
+          "val": 7,
+          "desc": "调整注册时间，新号用的，默认即可"
         },
         {
           "id": "ddm.zyyad.enableweapon",
@@ -100,20 +104,22 @@
         },
         {
           "id": "ddm.zyyad.weaponmode",
-          "name": "武器模式",
+          "name": "武器模式(0:关闭，1:补充已有，2:导入全部)",
           "type": "select",
           "val": "2",
           "items": [
             { "key": "关闭", "value": "0" },
             { "key": "补充已有", "value": "1" },
             { "key": "导入全部", "value": "2" }
-          ]
+          ],
+          "desc": "0:关闭模式，1:补充已有，2:导入全部"
         },
         {
           "id": "ddm.zyyad.weaponcount",
           "name": "武器碎片数量",
           "type": "number",
-          "val": 50
+          "val": 50,
+          "desc": "调整武器碎片数量"
         },
         {
           "id": "ddm.zyyad.enableskill",
