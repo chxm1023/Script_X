@@ -1,154 +1,271 @@
 {
-  "id": "ddm.zyyad.skill",
-  "name": "技能选择",
-  "settings": [
+  "id": "ddm.app.sub",
+  "name": "叮当猫脚本订阅",
+  "author": "@ddm1023",
+  "icon": "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm.png",
+  "repo": "https://t.me/ddm1023",
+  "apps": [
     {
-      "id": "ddm.zyyad.active.title",
-      "name": "====== 主动技能（最多2个） ======",
-      "type": "boolean",
-      "val": false
-    },
-
-    {
-      "id": "ddm.zyyad.active.2",
-      "name": "主动 毛笔",
-      "type": "boolean",
-      "val": false
-    },
-    {
-      "id": "ddm.zyyad.active.3",
-      "name": "主动 练兵符",
-      "type": "boolean",
-      "val": false
-    },
-    {
-      "id": "ddm.zyyad.active.4",
-      "name": "主动 神兵符",
-      "type": "boolean",
-      "val": true
+      "id": "ddm.app.sub",
+      "name": "叮当猫脚本开关",
+      "desc_html": "<p><font class=\"error--text\">脚本控制开关</font><br>本频道脚本免费使用，请勿私自售卖。<br>所有脚本仅供测试与学习使用。<br><a href=\"https://t.me/ddm1023\">@ddm1023</a></p>",
+      "settings": [
+        {
+          "id": "ddm.app_switch",
+          "name": "脚本总开关",
+          "type": "boolean",
+          "val": false,
+          "desc": "true = 开启 / false = 关闭"
+        }
+      ],
+      "author": "@ddm1023",
+      "repo": "",
+      "icons": [
+        "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm.png"
+      ]
     },
     {
-      "id": "ddm.zyyad.active.5",
-      "name": "主动 包子",
-      "type": "boolean",
-      "val": false
-    },
-    {
-      "id": "ddm.zyyad.active.6",
-      "name": "主动 御敌千里",
-      "type": "boolean",
-      "val": false
-    },
-    {
-      "id": "ddm.zyyad.active.7",
-      "name": "主动 砚台",
-      "type": "boolean",
-      "val": false
-    },
-    {
-      "id": "ddm.zyyad.active.8",
-      "name": "主动 陷阱",
-      "type": "boolean",
-      "val": false
-    },
-    {
-      "id": "ddm.zyyad.active.9",
-      "name": "主动 地雷",
-      "type": "boolean",
-      "val": false
-    },
-    {
-      "id": "ddm.zyyad.active.10",
-      "name": "主动 速攻符",
-      "type": "boolean",
-      "val": true
-    },
-    {
-      "id": "ddm.zyyad.active.21",
-      "name": "主动 垃圾桶",
-      "type": "boolean",
-      "val": false
-    },
-
-
-    {
-      "id": "ddm.zyyad.passive.title",
-      "name": "====== 被动技能（最多6个） ======",
-      "type": "boolean",
-      "val": false
-    },
-
-    {
-      "id": "ddm.zyyad.passive.11",
-      "name": "被动 降妖符",
-      "type": "boolean",
-      "val": true
-    },
-    {
-      "id": "ddm.zyyad.passive.12",
-      "name": "被动 农民",
-      "type": "boolean",
-      "val": true
-    },
-    {
-      "id": "ddm.zyyad.passive.13",
-      "name": "被动 招贤榜",
-      "type": "boolean",
-      "val": true
-    },
-    {
-      "id": "ddm.zyyad.passive.14",
-      "name": "被动 攻速符(全体)",
-      "type": "boolean",
-      "val": false
-    },
-    {
-      "id": "ddm.zyyad.passive.15",
-      "name": "被动 齐头并进",
-      "type": "boolean",
-      "val": true
-    },
-    {
-      "id": "ddm.zyyad.passive.16",
-      "name": "被动 续命丹",
-      "type": "boolean",
-      "val": false
-    },
-    {
-      "id": "ddm.zyyad.passive.17",
-      "name": "被动 大补丸",
-      "type": "boolean",
-      "val": false
-    },
-    {
-      "id": "ddm.zyyad.passive.18",
-      "name": "被动 泥潭",
-      "type": "boolean",
-      "val": false
-    },
-    {
-      "id": "ddm.zyyad.passive.19",
-      "name": "被动 洛阳铲",
-      "type": "boolean",
-      "val": true
-    },
-    {
-      "id": "ddm.zyyad.passive.20",
-      "name": "被动 召唤陨石",
-      "type": "boolean",
-      "val": false
-    },
-    {
-      "id": "ddm.zyyad.passive.22",
-      "name": "被动 升职令",
-      "type": "boolean",
-      "val": false
-    },
-    {
-      "id": "ddm.zyyad.passive.24",
-      "name": "被动 摸金校尉",
-      "type": "boolean",
-      "val": true
+      "id": "ddm.zyyad",
+      "name": "赵云与阿斗",
+      "desc": "辅助工具 v2.1",
+      "icons": [
+        "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/zyyad.png"
+      ],
+      "settings": [
+        {
+          "id": "ddm.zyyad.forcevalue",
+          "name": "强制覆盖模式",
+          "type": "boolean",
+          "val": false,
+          "desc": "关闭：只补不降\n开启：完全按配置覆盖"
+        },
+        {
+          "id": "ddm.zyyad.enablegold",
+          "name": "金币模块",
+          "type": "boolean",
+          "val": true,
+          "desc": "自动修改金币数量"
+        },
+        {
+          "id": "ddm.zyyad.gold",
+          "name": "金币数量",
+          "type": "number",
+          "val": 99999999
+        },
+        {
+          "id": "ddm.zyyad.enablelevel",
+          "name": "等级模块",
+          "type": "boolean",
+          "val": true,
+          "desc": "自动修改等级、章节、胜利次数"
+        },
+        {
+          "id": "ddm.zyyad.level",
+          "name": "等级",
+          "type": "number",
+          "val": "999"
+        },
+        {
+          "id": "ddm.zyyad.enableregister",
+          "name": "注册时间模块",
+          "type": "boolean",
+          "val": true,
+          "desc": "修改注册时间，让账号显示老账号"
+        },
+        {
+          "id": "ddm.zyyad.registerday",
+          "name": "注册天数",
+          "type": "number",
+          "val": "30"
+        },
+        {
+          "id": "ddm.zyyad.enableweapon",
+          "name": "武器模块",
+          "type": "boolean",
+          "val": true
+        },
+        {
+          "id": "ddm.zyyad.weaponmode",
+          "name": "武器模式",
+          "type": "select",
+          "val": "2",
+          "items": {
+            "0": "关闭",
+            "1": "补充已有武器",
+            "2": "导入全部武器"
+          }
+        },
+        {
+          "id": "ddm.zyyad.weaponcount",
+          "name": "武器碎片数量",
+          "type": "number",
+          "val": "50"
+        },
+        {
+          "id": "ddm.zyyad.enableavatar",
+          "name": "头像模块",
+          "type": "boolean",
+          "val": true,
+          "desc": "解锁头像"
+        },
+        {
+          "id": "ddm.zyyad.enableskill",
+          "name": "技能模块",
+          "type": "boolean",
+          "val": true,
+          "desc": "最多2个主动技能+6个被动技能"
+        },
+        {
+          "id": "ddm.zyyad.skill",
+          "name": "技能选择",
+          "settings": [
+            {
+              "id": "ddm.zyyad.active.title",
+              "name": "====== 主动技能（最多2个） ======",
+              "type": "boolean",
+              "val": false
+            },
+            {
+              "id": "ddm.zyyad.active.2",
+              "name": "主动 毛笔",
+              "type": "boolean",
+              "val": false
+            },
+            {
+              "id": "ddm.zyyad.active.3",
+              "name": "主动 练兵符",
+              "type": "boolean",
+              "val": false
+            },
+            {
+              "id": "ddm.zyyad.active.4",
+              "name": "主动 神兵符",
+              "type": "boolean",
+              "val": true
+            },
+            {
+              "id": "ddm.zyyad.active.5",
+              "name": "主动 包子",
+              "type": "boolean",
+              "val": false
+            },
+            {
+              "id": "ddm.zyyad.active.6",
+              "name": "主动 御敌千里",
+              "type": "boolean",
+              "val": false
+            },
+            {
+              "id": "ddm.zyyad.active.7",
+              "name": "主动 砚台",
+              "type": "boolean",
+              "val": false
+            },
+            {
+              "id": "ddm.zyyad.active.8",
+              "name": "主动 陷阱",
+              "type": "boolean",
+              "val": false
+            },
+            {
+              "id": "ddm.zyyad.active.9",
+              "name": "主动 地雷",
+              "type": "boolean",
+              "val": false
+            },
+            {
+              "id": "ddm.zyyad.active.10",
+              "name": "主动 速攻符",
+              "type": "boolean",
+              "val": true
+            },
+            {
+              "id": "ddm.zyyad.active.21",
+              "name": "主动 垃圾桶",
+              "type": "boolean",
+              "val": false
+            },
+            {
+              "id": "ddm.zyyad.passive.title",
+              "name": "====== 被动技能（最多6个） ======",
+              "type": "boolean",
+              "val": false
+            },
+            {
+              "id": "ddm.zyyad.passive.11",
+              "name": "被动 降妖符",
+              "type": "boolean",
+              "val": true
+            },
+            {
+              "id": "ddm.zyyad.passive.12",
+              "name": "被动 农民",
+              "type": "boolean",
+              "val": true
+            },
+            {
+              "id": "ddm.zyyad.passive.13",
+              "name": "被动 招贤榜",
+              "type": "boolean",
+              "val": true
+            },
+            {
+              "id": "ddm.zyyad.passive.14",
+              "name": "被动 攻速符(全体)",
+              "type": "boolean",
+              "val": false
+            },
+            {
+              "id": "ddm.zyyad.passive.15",
+              "name": "被动 齐头并进",
+              "type": "boolean",
+              "val": true
+            },
+            {
+              "id": "ddm.zyyad.passive.16",
+              "name": "被动 续命丹",
+              "type": "boolean",
+              "val": false
+            },
+            {
+              "id": "ddm.zyyad.passive.17",
+              "name": "被动 大补丸",
+              "type": "boolean",
+              "val": false
+            },
+            {
+              "id": "ddm.zyyad.passive.18",
+              "name": "被动 泥潭",
+              "type": "boolean",
+              "val": false
+            },
+            {
+              "id": "ddm.zyyad.passive.19",
+              "name": "被动 洛阳铲",
+              "type": "boolean",
+              "val": true
+            },
+            {
+              "id": "ddm.zyyad.passive.20",
+              "name": "被动 召唤陨石",
+              "type": "boolean",
+              "val": false
+            },
+            {
+              "id": "ddm.zyyad.passive.22",
+              "name": "被动 升职令",
+              "type": "boolean",
+              "val": false
+            },
+            {
+              "id": "ddm.zyyad.passive.24",
+              "name": "被动 摸金校尉",
+              "type": "boolean",
+              "val": true
+            }
+          ]
+        }
+      ]
     }
   ]
 }
