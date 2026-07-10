@@ -8,20 +8,19 @@
     {
       "id": "ddm.app.sub",
       "name": "叮当猫脚本开关",
-      "desc_html": "<p><font class=\"error--text\">脚本控制开关</font><br>本频道脚本免费使用，请勿私自售卖。<br>所有脚本仅供测试与学习使用。<br><a href=\"https://t.me/ddm1023\">@ddm1023</a></p>",
+      "desc_html": "<p><font class=\"error--text\">脚本控制中心</font><br>本频道的脚本为免费使用，请勿私自售卖！<br>我们未在任何平台开设商铺出售脚本，请勿轻信他人。<br>所有脚本仅供测试与体验之用，测试结束后请及时删除。<br>欢迎关注频道
+    • <a href=
+    \"https://t.me/ddm1023\">叮当猫脚本分享频道 @dd
+    m1023</a></p>",
+    
       "settings": [
         {
           "id": "ddm.app_switch",
-          "name": "脚本总开关",
+          "name": "⚡ 脚本总开关",
           "type": "boolean",
           "val": false,
-          "desc": "true = 开启 / false = 关闭"
+          "desc": "关闭：所有脚本停止运行\n开启：允许脚本执行"
         }
-      ],
-      "author": "@ddm1023",
-      "repo": "",
-      "icons": [
-        "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm.png"
       ]
     },
     {
