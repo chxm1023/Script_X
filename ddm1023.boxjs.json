@@ -30,8 +30,20 @@
         "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/zyyad.png"
       ],
       "keys": [
-        "ddm.zyyad.settings",
-        "ddm.zyyad.cache"
+        "ddm.zyyad.forcevalue",
+        "ddm.zyyad.enablegold",
+        "ddm.zyyad.gold",
+        "ddm.zyyad.enablelevel",
+        "ddm.zyyad.level",
+        "ddm.zyyad.enableregister",
+        "ddm.zyyad.registerday",
+        "ddm.zyyad.enableweapon",
+        "ddm.zyyad.weaponmode",
+        "ddm.zyyad.weaponcount",
+        "ddm.zyyad.enableavatar",
+        "ddm.zyyad.enableskill",
+        "ddm.zyyad.active",
+        "ddm.zyyad.passive"
       ],
       "settings": [
         {
@@ -133,7 +145,7 @@
           "desc": "启用技能修改。"
         },
         {
-          "id":"active",
+          "id":"ddm.zyyad.active",
           "name":"主动技能（最多2个）",
           "type":"checkboxes",
           "val":[
@@ -155,7 +167,7 @@
           "desc":"最多勾选2个主动技能。"
         },
         {
-          "id":"passive",
+          "id":"ddm.zyyad.passive",
           "name":"被动技能（最多6个）",
           "type":"checkboxes",
           "val":[
