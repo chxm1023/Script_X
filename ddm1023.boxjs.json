@@ -9,7 +9,9 @@
       "id": "ddm.app.sub",
       "name": "叮当猫脚本开关",
       "desc_html": "<p><font class=\"error--text\">⚡ 脚本控制中心</font><br><br>本频道脚本免费使用，请勿私自售卖！<br>未在任何平台开设商铺出售脚本，请勿轻信他人。<br>所有脚本仅供测试与体验使用，测试结束后请及时删除。<br><br>频道：<a href=\"https://t.me/ddm1023\">叮当猫脚本分享频道 @ddm1023</a></p>",
-    
+      "icon": [
+        "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm.png"
+      ],
       "settings": [
         {
           "id": "ddm.app_switch",
@@ -24,8 +26,12 @@
       "id": "ddm.zyyad",
       "name": "赵云与阿斗",
       "desc": "辅助工具 v2.1",
-      "icons": [
+      "icon": [
         "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/zyyad.png"
+      ],
+      "keys": [
+        "ddm.zyyad.settings",
+        "ddm.zyyad.cache"
       ],
       "settings": [
         {
@@ -127,120 +133,54 @@
           "desc": "启用技能修改。"
         },
         {
-          "id": "ddm.zyyad.active",
-          "name": "主动技能（最多2个）",
-          "type": "checkboxes",
-          "val": [
-            "4",
-            "10"
+          "id":"active",
+          "name":"主动技能（最多2个）",
+          "type":"checkboxes",
+          "val":[
+              "4",
+              "10"
           ],
-          "items": [
-            {
-              "key": "2",
-              "label": "毛笔"
-            },
-            {
-              "key": "3",
-              "label": "练兵符"
-            },
-            {
-              "key": "4",
-              "label": "神兵符"
-            },
-            {
-              "key": "5",
-              "label": "包子"
-            },
-            {
-              "key": "6",
-              "label": "御敌千里"
-            },
-            {
-              "key": "7",
-              "label": "砚台"
-            },
-            {
-              "key": "8",
-              "label": "陷阱"
-            },
-            {
-              "key": "9",
-              "label": "地雷"
-            },
-            {
-              "key": "10",
-              "label": "速攻符"
-            },
-            {
-              "key": "21",
-              "label": "垃圾桶"
-            }
+          "items":[
+              { "key":"2","label":"毛笔" },
+              { "key":"3","label":"练兵符" },
+              { "key":"4","label":"神兵符" },
+              { "key":"5","label":"包子" },
+              { "key":"6","label":"御敌千里" },
+              { "key":"7","label":"砚台" },
+              { "key":"8","label":"陷阱" },
+              { "key":"9","label":"地雷" },
+              { "key":"10","label":"速攻符" },
+              { "key":"21","label":"垃圾桶" }
           ],
-          "desc": "最多勾选2个主动技能。"
+          "desc":"最多勾选2个主动技能。"
         },
         {
-          "id": "ddm.zyyad.passive",
-          "name": "被动技能（最多6个）",
-          "type": "checkboxes",
-          "val": [
-            "11",
-            "12",
-            "13",
-            "15",
-            "19",
-            "24"
+          "id":"passive",
+          "name":"被动技能（最多6个）",
+          "type":"checkboxes",
+          "val":[
+              "11",
+              "12",
+              "13",
+              "15",
+              "19",
+              "24"
           ],
-          "items": [
-            {
-              "key": "11",
-              "label": "降妖符"
-            },
-            {
-              "key": "12",
-              "label": "农民"
-            },
-            {
-              "key": "13",
-              "label": "招贤榜"
-            },
-            {
-              "key": "14",
-              "label": "攻速符（全体）"
-            },
-            {
-              "key": "15",
-              "label": "齐头并进"
-            },
-            {
-              "key": "16",
-              "label": "续命丹"
-            },
-            {
-              "key": "17",
-              "label": "大补丸"
-            },
-            {
-              "key": "18",
-              "label": "泥潭"
-            },
-            {
-              "key": "19",
-              "label": "洛阳铲"
-            },
-            {
-              "key": "20",
-              "label": "召唤陨石"
-            },
-            {
-              "key": "22",
-              "label": "升职令"
-            },
-            {
-              "key": "24",
-              "label": "摸金校尉"
-            }
+          "items":[
+              { "key":"11","label":"降妖符" },
+              { "key":"12","label":"农民" },
+              { "key":"13","label":"招贤榜" },
+              { "key":"14","label":"攻速符（全体）" },
+              { "key":"15","label":"齐头并进" },
+              { "key":"16","label":"续命丹" },
+              { "key":"17","label":"大补丸" },
+              { "key":"18","label":"泥潭" },
+              { "key":"19","label":"洛阳铲" },
+              { "key":"20","label":"召唤陨石" },
+              { "key":"22","label":"升职令" },
+              { "key":"24","label":"摸金校尉" }
           ],
-          "desc": "最多勾选6个被动技能。"
+          "desc":"最多勾选6个被动技能。"
         }
       ]
     }
