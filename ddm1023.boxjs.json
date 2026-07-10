@@ -116,10 +116,9 @@
           "desc": "最多2个主动技能+6个被动技能"
         },
         {
-          "id": "ddm.zyyad.active.title1",
-          "name": "====== 主动技能（最多2个） ======",
-          "type": "boolean",
-          "val": false
+          "id":"ddm.zyyad.active.title1",
+          "name":"====== 主动技能（最多2个） ======",
+          "type":"label"
         },
         {
           "id": "ddm.zyyad.active.2",
