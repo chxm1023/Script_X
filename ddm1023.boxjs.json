@@ -10,6 +10,7 @@
       "name": "叮当猫脚本开关",
       "desc_html": "<p><font class=\"error--text\">⚡ 脚本控制中心</font><br><br>本频道脚本免费使用，请勿私自售卖！<br>未在任何平台开设商铺出售脚本，请勿轻信他人。<br>所有脚本仅供测试与体验使用，测试结束后请及时删除。<br><br>频道：<a href=\"https://t.me/ddm1023\">叮当猫脚本分享频道 @ddm1023</a></p>",
       "icons": [
+        "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm.png",
         "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm.png"
       ],
       "settings": [
@@ -27,6 +28,7 @@
       "name": "赵云与阿斗",
       "desc": "辅助工具 v2.1",
       "icons": [
+        "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/zyyad.png",
         "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/zyyad.png"
       ],
       "keys": [
