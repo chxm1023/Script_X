@@ -107,7 +107,7 @@
         {
           "id": "ddm.zyyad.weaponmode",
           "name": "武器模式",
-          "type": "selects",
+          "type": "select",
           "val": "2",
           "items": [
             {
