@@ -68,7 +68,6 @@ http:
     - "*.hunliji.com"
     - "*.grammarly.com"
     - "*.jiemengjia.com"
-    - "umeecorn.com"
     - "luyintu.cushuikeji.cn"
     - "api.changecollective.com"
     - "*.whalean.com"
@@ -94,7 +93,6 @@ http:
     - "*-slidebox-ios-prod.cloudfunctions.net"
     - "www.luqijianggushi.com"
     - "cdn-bm.camera360.com"
-    - "glass.photo"
     - "api.intelimeditor.com"
     - "open3.vistastory.com"
     - "www.xfx119.com"
@@ -110,7 +108,6 @@ http:
     - "kkr-user.tapque.com"
     - "subscription-api.notedapp.io"
     - "*.execute-api.ap-northeast-2.amazonaws.com"
-    - "main-sciam-nature.content.pugpig.com"
     - "creaceed.com"
     - "*api.quthing.com"
     - "backend.getdrafts.com"
@@ -989,14 +986,6 @@ http:
       max-size: -1
       timeout: 60
 
-#Scientific_American杂志 hostname = main-sciam-nature.content.pugpig.com
-    - match: ^https:\/\/main-sciam-nature\.content\.pugpig\.com\/subs\/(itunes_store|pianomediaoauth_subs)\/verify_subscription
-      name: "sa_215"
-      type: response
-      require-body: true
-      max-size: -1
-      timeout: 60
-
 #DayMore-时尚日记本 hostname = *.execute-api.ap-northeast-2.amazonaws.com
     - match: ^https?:\/\/.*\.execute-api\.ap-northeast-2\.amazonaws\.com\/product\/apple\/receipt
       name: "daymore_217"
@@ -1080,14 +1069,6 @@ http:
 #暴走P图 hostname = api.intelimeditor.com
     - match: ^https?:\/\/api\.intelimeditor\.com\/user\/loginByThirdPlatformApp
       name: "baozouptu_239"
-      type: response
-      require-body: true
-      max-size: -1
-      timeout: 60
-
-#Glass:摄影社区 hostname = glass.photo
-    - match: ^https:\/\/glass\.photo\/api\/(v2\/users\/[0-9a-zA-Z-]+$|v1\/account$|v3\/token$)
-      name: "glass_241"
       type: response
       require-body: true
       max-size: -1
@@ -1221,14 +1202,6 @@ http:
 #录音专家 hostname = luyintu.cushuikeji.cn
     - match: ^http:\/\/luyintu\.cushuikeji\.cn\/tuv2\.(user\/info|order\/comboDuration|home\/activityAlert)
       name: "luyinzhuanjia_274"
-      type: response
-      require-body: true
-      max-size: -1
-      timeout: 60
-
-#众山小读书 hostname = umeecorn.com
-    - match: ^https:\/\/umeecorn\.com\/notebook\/(loginedUser\/(info|tier|balance)|user\/(login|loginApple))
-      name: "notebook_276"
       type: response
       require-body: true
       max-size: -1
