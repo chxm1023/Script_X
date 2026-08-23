@@ -29,12 +29,12 @@
 
 [Script]
 #Revenuecat-系列 hostname = api.revenuecat.com, api.rc-backup.com
-Reheji = type=http-response, engine=webview, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, requires-body=true, max-size=-1, timeout=60
+Revenuecat_1 = type=http-response,engine=webview,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js,pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$),max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
 
-Reheji = type=http-request, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, timeout=60
+Revenuecat_2 = type=http-request,engine=webview,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js,pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$),max-size=0,timeout=10,script-update-interval=0,enable=true
 
 #iTunes-系列 hostname = buy.itunes.apple.com
-iTunes = type=http-response, engine=webview, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js, requires-body=true, max-size=-1, timeout=60
+iTunes = type=http-response,engine=webview,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,max-size=0,requires-body=true,timeout=10,script-update-interval=0,enable=true
 
 #Bending-系列 hostname = *.oracle.bendingspoonsapps.com
 bending = type=http-response, pattern=^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify), script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/bending.js, requires-body=true, max-size=-1, timeout=60
