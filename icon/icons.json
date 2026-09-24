@@ -70,8 +70,11 @@
  {"name": "stash2",
   "url": "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/stash2.png"},
 
- {"name": "boxjs",
+ {"name": "Boxjs",
   "url": "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/box.png"},
+
+ {"name": "Boxjs1",
+  "url": "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/boxjs.png"},
 
  {"name": "Google Voice",
   "url": "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/GV.PNG"},
